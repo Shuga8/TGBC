@@ -11,15 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sermons', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title')->unique();
-            $table->string('description');
-            $table->string('featured_image_url')->nullable();
-            $table->string('sermon_type');
             $table->string('image_url');
-            $table->boolean('is_visible')->default(false);
-            $table->enum('type', ['buyable', 'downloadable'])->default('downloadable');
+            $table->string('content');
             $table->date('published_at');
             $table->timestamps();
         });
@@ -30,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sermons');
+        Schema::dropIfExists('posts');
     }
 };
