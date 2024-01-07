@@ -6,9 +6,19 @@ use App\Filament\Resources\SermonsResource\Pages;
 use App\Filament\Resources\SermonsResource\RelationManagers;
 use App\Models\Sermons;
 use Filament\Forms;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Group;
+use Filament\Forms\Components\MarkdownEditor;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -17,13 +27,52 @@ class SermonsResource extends Resource
 {
     protected static ?string $model = Sermons::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    // heroicon-o-rectangle-stack
+    protected static ?string $navigationIcon = 'heroicon-o-signal';
+
+    protected static ?string $navigationLabel = 'Sermons';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                //
+                Group::make()
+                    ->schema([
+
+                        Section::make()
+
+                            ->schema([
+                                TextInput::make('title'),
+                                MarkdownEditor::make('description'),
+                            ])
+
+                    ]),
+
+                Group::make()
+                    ->schema([
+
+                        Section::make('Sermon type')
+
+                            ->schema([
+                                Select::make('sermorn_type')
+                                    ->options([
+                                        'audio' => 'audio',
+                                        'video' => 'video',
+                                    ])
+                            ])->collapsible(),
+
+                        Section::make('Status')
+
+                            ->schema([
+                                Toggle::make('is_visible'),
+                                DatePicker::make('published_at')
+                            ])
+
+                    ]),
+
+
+
+
             ]);
     }
 
@@ -31,7 +80,12 @@ class SermonsResource extends Resource
     {
         return $table
             ->columns([
-                //
+                ImageColumn::make('featured_image_url'),
+                TextColumn::make('title'),
+                TextColumn::make('description'),
+                TextColumn::make('sermon_type'),
+                IconColumn::make('is_visible')->boolean(),
+                TextColumn::make('published_at'),
             ])
             ->filters([
                 //
@@ -48,14 +102,14 @@ class SermonsResource extends Resource
                 Tables\Actions\CreateAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -63,5 +117,5 @@ class SermonsResource extends Resource
             'create' => Pages\CreateSermons::route('/create'),
             'edit' => Pages\EditSermons::route('/{record}/edit'),
         ];
-    }    
+    }
 }
