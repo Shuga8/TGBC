@@ -54,7 +54,7 @@ class SermonsResource extends Resource
                         Section::make('Sermon type')
 
                             ->schema([
-                                Select::make('sermorn_type')
+                                Select::make('sermon_type')
                                     ->options([
                                         'audio' => 'audio',
                                         'video' => 'video',
