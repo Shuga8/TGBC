@@ -9,4 +9,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Sermons extends Model
 {
     use HasFactory, SoftDeletes;
+
+    protected $fillable = [
+        'title',
+        'description',
+        'featured_image_url',
+        'sermon_type',
+        'image_url',
+        'is_visible',
+        'type',
+        'published_at'
+    ];
 }
