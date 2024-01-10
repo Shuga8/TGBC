@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('sermon_type');
             $table->string('featured_image_url')->nullable();
-            $table->string('file_url');
+            $table->longText('file_url');
             $table->boolean('is_visible')->default(false);
             $table->enum('type', ['buyable', 'downloadable'])->default('downloadable');
             $table->date('published_at');

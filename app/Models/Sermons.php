@@ -13,9 +13,9 @@ class Sermons extends Model
     protected $fillable = [
         'title',
         'description',
-        'featured_image_url',
         'sermon_type',
-        'image_url',
+        'featured_image_url',
+        'file_url',
         'is_visible',
         'type',
         'published_at'

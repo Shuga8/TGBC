@@ -7,6 +7,7 @@ use App\Filament\Resources\SermonsResource\RelationManagers;
 use App\Models\Sermons;
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Group;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Section;
@@ -42,7 +43,10 @@ class SermonsResource extends Resource
                         Section::make()
 
                             ->schema([
-                                TextInput::make('title'),
+                                TextInput::make('title')
+                                    ->required()
+                                    ->live(onBlur: true)
+                                    ->unique(),
                                 MarkdownEditor::make('description'),
                             ])
 
@@ -57,8 +61,8 @@ class SermonsResource extends Resource
                                 Select::make('sermon_type')
                                     ->options([
                                         'audio' => 'audio',
-                                        'video' => 'video',
-                                    ])
+                                    ]),
+                                FileUpload::make('file_url')
                             ])->collapsible(),
 
                         Section::make('Status')
@@ -80,7 +84,6 @@ class SermonsResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('featured_image_url'),
                 TextColumn::make('title'),
                 TextColumn::make('description'),
                 TextColumn::make('sermon_type'),
