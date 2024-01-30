@@ -9,4 +9,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Event extends Model
 {
     use HasFactory, SoftDeletes;
+
+    protected $fillable = [
+        'name',
+        'hosted_by',
+        'hosted_for',
+        'image',
+        'description',
+        'location',
+        'happning_at'
+    ];
 }
