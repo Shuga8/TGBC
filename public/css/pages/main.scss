@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
+    transition: 0.3s ease-in-out;
 }
 
 body {
@@ -16,21 +17,30 @@ main {
 
 @media (min-width: 800px) {
     .header {
+        position: fixed;
+        top: 0;
         width: 100%;
         height: 100px;
         background: rgba($color: #000000, $alpha: 0.7);
-        overflow: hidden;
 
         .navbar {
             width: 100%;
             height: 100%;
             display: flex;
             align-items: center;
-            gap: 10rem;
+            gap: 15rem;
             padding: 0px 10px;
 
             .logo {
-                width: 150px;
+                width: fit-content !important;
+                > a {
+                    img {
+                        width: 150px;
+                        height: 100% !important;
+                        mix-blend-mode: difference;
+                        object-fit: cover;
+                    }
+                }
             }
 
             .links {
@@ -38,13 +48,33 @@ main {
                 height: 100%;
                 align-items: center;
 
-                .link {
-                    a {
-                        padding: 10px 14px;
+                > .link {
+                    > a {
+                        padding: 20px 14px;
                         color: #ffffff;
+
+                        &:hover {
+                            color: #f46942;
+                        }
+
+                        &.donate-btn {
+                            padding: 10px 16px;
+                            background: #eb2406;
+                            border-radius: 25px;
+                        }
                     }
-                    .dropdown {
+                    > a:hover ~ .dropdown {
+                        display: block;
+
+                        > a {
+                            display: block;
+                        }
+                    }
+
+                    > .dropdown {
                         display: none;
+                        position: absolute;
+                        bottom: -50px;
                     }
                 }
             }

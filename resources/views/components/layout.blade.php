@@ -10,6 +10,20 @@
 	<link type="image/x-icon" href="{{ asset('favicon.png') }}" rel="shortcut icon">
 	<link type="text/css" href="{{ asset('css/pages/main.css') }}" rel="stylesheet">
 	@stack('links')
+	<script src="https://unpkg.com/scrollreveal"></script>
+	<script>
+		ScrollReveal({
+			reset: true
+		});
+
+		var slideUp = {
+			distance: '150%',
+			origin: 'bottom',
+			opacity: null
+		};
+
+		ScrollReveal().reveal('.slide-up', slideUp);
+	</script>
 	@stack('scripts')
 	@vite('resources/js/app.js')
 </head>
@@ -21,6 +35,7 @@
 	<main>
 		{{ $slot }}
 	</main>
+
 
 </body>
 
