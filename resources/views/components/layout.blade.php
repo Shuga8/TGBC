@@ -8,6 +8,7 @@
 	@stack('metas')
 	<title>{{ config('app.name', 'Total Gospel BC') }} - {{ $title }}</title>
 	<link type="image/x-icon" href="{{ asset('favicon.png') }}" rel="shortcut icon">
+	<link type="text/css" href="{{ asset('css/pages/main.css') }}" rel="stylesheet">
 	@stack('links')
 	@stack('scripts')
 	@vite('resources/js/app.js')
@@ -17,7 +18,9 @@
 
 	@include('partials._navbar')
 
-	{{ $slot }}
+	<main>
+		{{ $slot }}
+	</main>
 
 </body>
 

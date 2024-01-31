@@ -32,7 +32,7 @@
 			</div>
 
 			<div class="link">
-				<a href="">Contact Us</a>
+				<a href="">Contact</a>
 			</div>
 
 			<div class="link">
