@@ -11,5 +11,7 @@ class PagesController extends Controller
         $data = [
             'title' => 'Home',
         ];
+
+        return view('pages.index')->with($data);
     }
 }
