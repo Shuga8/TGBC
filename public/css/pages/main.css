@@ -47,9 +47,13 @@ main {
     height: 100%;
     align-items: center;
   }
+  .header .navbar .links > .link {
+    position: relative;
+  }
   .header .navbar .links > .link > a {
-    padding: 20px 14px;
+    padding: 40px 14px;
     color: #ffffff;
+    position: relative; /* Added position relative */
   }
   .header .navbar .links > .link > a:hover {
     color: #f46942;
@@ -59,15 +63,22 @@ main {
     background: #eb2406;
     border-radius: 25px;
   }
-  .header .navbar .links > .link > a:hover ~ .dropdown {
-    display: block;
-  }
-  .header .navbar .links > .link > a:hover ~ .dropdown > a {
-    display: block;
-  }
-  .header .navbar .links > .link > .dropdown {
+  .header .navbar .links > .link .dropdown {
     display: none;
     position: absolute;
-    bottom: -50px;
+    top: 40px; /* Adjusted position */
+    left: 0; /* Adjusted position */
+    background: #aaa;
+    width: 150px;
+    /* Removed &:hover from here */
+  }
+  .header .navbar .links > .link > a:hover ~ .dropdown,
+  .header .navbar .links > .link .dropdown:hover {
+    display: block;
+  }
+  .header .navbar .links > .link > a:hover ~ .dropdown > a,
+  .header .navbar .links > .link .dropdown:hover > a {
+    display: block;
+    padding: 12px 5px;
   }
 }/*# sourceMappingURL=main.css.map */

@@ -49,9 +49,12 @@ main {
                 align-items: center;
 
                 > .link {
+                    position: relative;
+
                     > a {
-                        padding: 20px 14px;
+                        padding: 40px 14px;
                         color: #ffffff;
+                        position: relative; /* Added position relative */
 
                         &:hover {
                             color: #f46942;
@@ -63,18 +66,26 @@ main {
                             border-radius: 25px;
                         }
                     }
-                    > a:hover ~ .dropdown {
+
+                    .dropdown {
+                        display: none;
+                        position: absolute;
+                        top: 40px; /* Adjusted position */
+                        left: 0; /* Adjusted position */
+                        background: #aaa;
+                        width: 150px;
+
+                        /* Removed &:hover from here */
+                    }
+
+                    > a:hover ~ .dropdown,
+                    .dropdown:hover {
                         display: block;
 
                         > a {
                             display: block;
+                            padding: 12px 5px;
                         }
-                    }
-
-                    > .dropdown {
-                        display: none;
-                        position: absolute;
-                        bottom: -50px;
                     }
                 }
             }
