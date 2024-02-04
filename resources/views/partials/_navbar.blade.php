@@ -4,7 +4,7 @@
 			<a href="{{ route('home') }}"><img src="{{ asset('logo_300X300.png') }}" alt="Logo"></a>
 		</div>
 
-		<div class="links">
+		<div class="links active-links">
 			<div class="link">
 				<a href="">Home</a>
 			</div>
@@ -12,7 +12,7 @@
 			<div class="link">
 				<a href="">About</a>
 
-				<div class="dropdown about-dropdown">
+				<div class="dropdown about-dropdown active-dropdown">
 					<a href="">Meet Our G.O</a>
 					<a href="">Our Mummy G.O</a>
 					<a href="">Meet Our Pastors</a>
@@ -37,6 +37,10 @@
 
 			<div class="link">
 				<a class="donate-btn" href="">Donate</a>
+			</div>
+
+			<div class="link">
+				<a class="toggle-icon" href="javascript:void(0)">&#9776;</a>
 			</div>
 		</div>
 	</nav>
