@@ -51,7 +51,7 @@ main {
     position: relative;
   }
   .header .navbar .links > .link:not(:has(a.toggle-icon)) > a {
-    padding: 40px 14px;
+    padding: 10px 14px;
     color: #ffffff;
     position: relative; /* Added position relative */
   }
@@ -95,6 +95,7 @@ main {
     width: 100%;
     height: 100px;
     background: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
   }
   header .navbar {
     width: 100%;
@@ -118,11 +119,39 @@ main {
     display: block;
     height: 100%;
   }
+  header .navbar .links a {
+    color: #fff;
+    padding: 15px 0px;
+  }
   header .navbar .links > .link:not(:has(a.toggle-icon)) {
-    display: none;
+    display: block;
+    padding: 10px;
+  }
+  header .navbar .links > .link:not(:has(a.toggle-icon)):has(.dropdown) > a {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: #fff;
+  }
+  header .navbar .links > .link:not(:has(a.toggle-icon)):has(.dropdown) > a::after {
+    content: "+";
   }
   header .navbar .links > .link:not(:has(a.toggle-icon)) > .dropdown {
-    display: none;
+    height: 0px;
+    overflow: hidden;
+    visibility: hidden;
+  }
+  header .navbar .links > .link:not(:has(a.toggle-icon)) > .dropdown.active-dropdown {
+    display: block;
+    padding: 1px 20px;
+    height: 150px;
+    visibility: visible;
+  }
+  header .navbar .links > .link:not(:has(a.toggle-icon)) > .dropdown.active-dropdown a {
+    display: block;
+  }
+  header .navbar .links > .link:not(:has(a.toggle-icon)) .dropdown.active-dropdown ~ a::after {
+    content: "-" !important;
   }
   header .navbar .links > .link:has(a.toggle-icon) {
     position: absolute;
@@ -132,23 +161,10 @@ main {
     font-size: 2rem;
     padding: 1rem;
   }
-  header .navbar .links.active-links > .link:not(:has(a.toggle-icon)) {
-    display: block;
-    padding: 10px;
+  .header.active-header {
+    height: 500px;
   }
-  header .navbar .links.active-links > .link:not(:has(a.toggle-icon)):has(.dropdown) > a {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-  }
-  header .navbar .links.active-links > .link:not(:has(a.toggle-icon)):has(.dropdown) > a::after {
-    content: "+";
-  }
-  header .navbar .links.active-links > .link:not(:has(a.toggle-icon)) > .dropdown.active-dropdown {
-    display: block;
-    padding: 10px 20px;
-  }
-  header .navbar .links.active-links > .link:not(:has(a.toggle-icon)) > .dropdown.active-dropdown a {
-    display: block;
+  .header.active-header.increase {
+    height: 600px;
   }
 }/*# sourceMappingURL=main.css.map */

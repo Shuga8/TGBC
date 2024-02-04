@@ -52,7 +52,7 @@ main {
                     position: relative;
 
                     > a {
-                        padding: 40px 14px;
+                        padding: 10px 14px;
                         color: #ffffff;
                         position: relative; /* Added position relative */
 
@@ -108,6 +108,7 @@ main {
         width: 100%;
         height: 100px;
         background: rgba($color: #000000, $alpha: 0.7);
+        overflow: hidden;
 
         .navbar {
             width: 100%;
@@ -132,11 +133,48 @@ main {
                 display: block;
                 height: 100%;
 
+                a {
+                    color: #fff;
+                    padding: 15px 0px;
+                }
+
                 > .link:not(:has(a.toggle-icon)) {
-                    display: none;
+                    display: block;
+                    padding: 10px;
+
+                    &:has(.dropdown) {
+                        > a {
+                            display: flex;
+                            width: 100%;
+                            justify-content: space-between;
+                            color: #fff;
+                            &::after {
+                                content: "+";
+                            }
+                        }
+                    }
 
                     > .dropdown {
-                        display: none;
+                        height: 0px;
+                        overflow: hidden;
+                        visibility: hidden;
+                    }
+
+                    > .dropdown.active-dropdown {
+                        display: block;
+                        padding: 1px 20px;
+                        height: 150px;
+                        visibility: visible;
+
+                        a {
+                            display: block;
+                        }
+                    }
+
+                    .dropdown.active-dropdown ~ a {
+                        &::after {
+                            content: "-" !important;
+                        }
                     }
                 }
 
@@ -149,32 +187,14 @@ main {
                     padding: 1rem;
                 }
             }
-
-            .links.active-links {
-                > .link:not(:has(a.toggle-icon)) {
-                    display: block;
-                    padding: 10px;
-
-                    &:has(.dropdown) {
-                        > a {
-                            display: flex;
-                            width: 100%;
-                            justify-content: space-between;
-                            &::after {
-                                content: "+";
-                            }
-                        }
-                    }
-                    > .dropdown.active-dropdown {
-                        display: block;
-                        padding: 10px 20px;
-
-                        a {
-                            display: block;
-                        }
-                    }
-                }
-            }
         }
+    }
+
+    .header.active-header {
+        height: 500px;
+    }
+
+    .header.active-header.increase {
+        height: 600px;
     }
 }

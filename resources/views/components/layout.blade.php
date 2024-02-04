@@ -37,6 +37,33 @@
 	</main>
 
 
+	<script src="{{ asset('js/pages/header.js') }}"></script>
+
+	<!-- Include jQuery library -->
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			// Function to toggle the height of .header.active-header
+			function toggleHeaderHeight() {
+				if ($('.dropdown.active-dropdown').length > 0) {
+					$('.header.active-header').css('height', '600px');
+				} else {
+					$('.header.active-header').css('height', '510px');
+				}
+			}
+
+			// Call the function initially
+			toggleHeaderHeight();
+
+			// Event listener for changes in .dropdown.active-dropdown
+			$('.dropdown').on('click', function() {
+				toggleHeaderHeight();
+			});
+		});
+	</script>
 </body>
+
+
 
 </html>

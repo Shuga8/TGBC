@@ -4,15 +4,15 @@
 			<a href="{{ route('home') }}"><img src="{{ asset('logo_300X300.png') }}" alt="Logo"></a>
 		</div>
 
-		<div class="links active-links">
+		<div class="links">
 			<div class="link">
 				<a href="">Home</a>
 			</div>
 
-			<div class="link">
-				<a href="">About</a>
+			<div class="link dropable">
+				<a href="javascript:void(0)">About</a>
 
-				<div class="dropdown about-dropdown active-dropdown">
+				<div class="dropdown about-dropdown">
 					<a href="">Meet Our G.O</a>
 					<a href="">Our Mummy G.O</a>
 					<a href="">Meet Our Pastors</a>
