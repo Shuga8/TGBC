@@ -173,7 +173,7 @@ main {
 
                     .dropdown.active-dropdown ~ a {
                         &::after {
-                            content: "-" !important;
+                            content: "&#8964;" !important;
                         }
                     }
                 }

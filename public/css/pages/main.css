@@ -151,7 +151,7 @@ main {
     display: block;
   }
   header .navbar .links > .link:not(:has(a.toggle-icon)) .dropdown.active-dropdown ~ a::after {
-    content: "-" !important;
+    content: "&#8964;" !important;
   }
   header .navbar .links > .link:has(a.toggle-icon) {
     position: absolute;
