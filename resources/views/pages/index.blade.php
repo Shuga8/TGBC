@@ -5,7 +5,7 @@
 
 			{{-- Radios for slides --}}
 
-			<input id="radio1" name="radio-btn" type="radio">
+			<input id="radio1" name="radio-btn" type="radio" checked>
 			<input id="radio2" name="radio-btn" type="radio">
 			<input id="radio3" name="radio-btn" type="radio">
 			<input id="radio4" name="radio-btn" type="radio">
@@ -13,6 +13,9 @@
 			{{-- Images --}}
 			<div class="slide first">
 				<img src="{{ asset('images/1.jpg') }}" alt="">
+				<div class="content first">
+					<h1>{{ config('app.name') }}</h1>
+				</div>
 			</div>
 
 			<div class="slide">
@@ -26,6 +29,8 @@
 			<div class="slide">
 				<img src="{{ asset('images/4.jpg') }}" alt="">
 			</div>
+
+
 
 			{{-- Automatic navigation --}}
 

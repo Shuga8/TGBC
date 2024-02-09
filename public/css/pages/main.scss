@@ -214,13 +214,13 @@ main {
 
 .slider {
     width: 100% !important;
-    height: 500px;
+    height: 600px;
     overflow: hidden;
     position: relative;
 
     .slides {
         width: 500%;
-        height: 500px;
+        height: 600px;
         display: flex;
 
         > input {
@@ -233,10 +233,24 @@ main {
 
             > img {
                 width: clamp(200px, 1400px, 1400px);
-                height: 500px;
+                height: 600px;
                 object-fit: cover;
                 aspect-ratio: 16 / 9;
                 mix-blend-mode: difference;
+            }
+
+            .content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: 2s ease-in-out;
+
+                h1 {
+                    font-size: 3rem;
+                    text-shadow: 1px 1px 1px #eee, -1px -1px 1px #ddd;
+                    font-weight: 800;
+                }
             }
         }
 
@@ -246,7 +260,7 @@ main {
             bottom: 20px;
             display: flex;
             justify-content: center;
-            gap: 5px;
+            gap: 15px;
             z-index: 9;
 
             > .manual-btn {
@@ -255,6 +269,60 @@ main {
                 height: 20px;
                 border-radius: 25px;
                 cursor: pointer;
+
+                &:hover {
+                    background: #243070;
+                }
+            }
+        }
+
+        #radio1:checked ~ .first {
+            margin-left: 0%;
+
+            .content {
+                &:not(.first) {
+                    display: none;
+                    transition: 2s ease-in-out;
+                }
+            }
+        }
+
+        #radio2:checked ~ .first {
+            margin-left: -20%;
+        }
+
+        #radio3:checked ~ .first {
+            margin-left: -40%;
+        }
+
+        #radio4:checked ~ .first {
+            margin-left: -60%;
+        }
+
+        #radio2:checked ~ .slide {
+            .content {
+                &:not(.second) {
+                    display: none;
+                    transition: 2s ease-in-out;
+                }
+            }
+        }
+
+        #radio3:checked ~ .slide {
+            .content {
+                &:not(.third) {
+                    display: none;
+                    transition: 2s ease-in-out;
+                }
+            }
+        }
+
+        #radio4:checked ~ .slide {
+            .content {
+                &:not(.fourth) {
+                    display: none;
+                    transition: 2s ease-in-out;
+                }
             }
         }
     }
