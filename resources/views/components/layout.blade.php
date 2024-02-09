@@ -24,7 +24,6 @@
 
 		ScrollReveal().reveal('.slide-up', slideUp);
 	</script>
-	@stack('scripts')
 	@vite('resources/js/app.js')
 </head>
 
@@ -62,6 +61,7 @@
 			});
 		});
 	</script>
+	@stack('scripts')
 </body>
 
 
