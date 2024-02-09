@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
 	<meta charset="UTF-8">
@@ -10,20 +10,7 @@
 	<link type="image/x-icon" href="{{ asset('favicon.png') }}" rel="shortcut icon">
 	<link type="text/css" href="{{ asset('css/pages/main.css') }}" rel="stylesheet">
 	@stack('links')
-	<script src="https://unpkg.com/scrollreveal"></script>
-	<script>
-		ScrollReveal({
-			reset: true
-		});
-
-		var slideUp = {
-			distance: '150%',
-			origin: 'bottom',
-			opacity: null
-		};
-
-		ScrollReveal().reveal('.slide-up', slideUp);
-	</script>
+	<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 	@vite('resources/js/app.js')
 </head>
 
@@ -40,6 +27,36 @@
 
 	<!-- Include jQuery library -->
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+	<script>
+		ScrollReveal().reveal('.slide-up', {
+			distance: '150px',
+			origin: 'bottom',
+			opacity: 0,
+			duration: 1000
+		});
+
+		ScrollReveal().reveal('.slide-left', {
+			distance: '150%',
+			origin: 'left',
+			opacity: 0,
+			duration: 1000
+		});
+
+		ScrollReveal().reveal('.slide-right', {
+			distance: '150%',
+			origin: 'right',
+			opacity: 0,
+			duration: 1000
+		});
+
+		ScrollReveal().reveal('.slide-top', {
+			distance: '150%',
+			origin: 'top',
+			opacity: 0,
+			duration: 1000
+		});
+	</script>
 	@stack('scripts')
 </body>
 
