@@ -210,6 +210,18 @@ main {
     .header.active-header.increase {
         height: 530px;
     }
+
+    .slider {
+        .slides {
+            > .slide {
+                .content {
+                    h1 {
+                        font-size: 1.5rem !important;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .slider {
@@ -230,6 +242,7 @@ main {
         > .slide {
             width: 20%;
             transition: 2s;
+            position: relative;
 
             > img {
                 width: clamp(200px, 1400px, 1400px);
@@ -240,16 +253,37 @@ main {
             }
 
             .content {
+                width: 100%;
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 transition: 2s ease-in-out;
+                z-index: 0;
+                padding: 10px;
 
                 h1 {
                     font-size: 3rem;
-                    text-shadow: 1px 1px 1px #eee, -1px -1px 1px #ddd;
+                    text-shadow: 1px 1px 0px #aa81f6, -1px -1px 0px #aa81f6;
+                    text-rendering: geometricPrecision;
+                    word-wrap: normal;
+                    word-break: normal;
                     font-weight: 800;
+                    color: #290271;
+                    text-align: center;
+                }
+
+                .actions {
+                    margin-top: 15px;
+                    text-align: center;
+
+                    a.more {
+                        padding: 8px 14px;
+                        color: #fff;
+                        background: #091b80;
+                        text-transform: lowercase;
+                        border-radius: 25px;
+                    }
                 }
             }
         }
@@ -279,12 +313,12 @@ main {
         #radio1:checked ~ .first {
             margin-left: 0%;
 
-            .content {
+            /* .content {
                 &:not(.first) {
                     display: none;
                     transition: 2s ease-in-out;
                 }
-            }
+            } */
         }
 
         #radio2:checked ~ .first {
@@ -299,7 +333,7 @@ main {
             margin-left: -60%;
         }
 
-        #radio2:checked ~ .slide {
+        /*  #radio2:checked ~ .slide {
             .content {
                 &:not(.second) {
                     display: none;
@@ -324,6 +358,6 @@ main {
                     transition: 2s ease-in-out;
                 }
             }
-        }
+        } */
     }
 }

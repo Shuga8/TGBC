@@ -14,7 +14,11 @@
 			<div class="slide first">
 				<img src="{{ asset('images/1.jpg') }}" alt="">
 				<div class="content first">
-					<h1>{{ config('app.name') }}</h1>
+					<h1 class="slide-up">{{ config('app.name') }}</h1>
+
+					<div class="actions">
+						<a class="more" href="">More</a>
+					</div>
 				</div>
 			</div>
 
@@ -33,7 +37,6 @@
 
 
 			{{-- Automatic navigation --}}
-
 			<div class="navigation-auto">
 				<div class="auto-btn1"></div>
 				<div class="auto-btn2"></div>
