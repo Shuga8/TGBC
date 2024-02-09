@@ -133,9 +133,9 @@ main {
                 display: block;
                 height: 100%;
 
-                a {
+                > link > a {
                     color: #fff;
-                    padding: 15px 0px;
+                    padding: 10px 0px;
                 }
 
                 > .link:not(:has(a.toggle-icon)) {
@@ -149,7 +149,7 @@ main {
                             justify-content: space-between;
                             color: #fff;
                             &::after {
-                                content: "+";
+                                content: "⌄";
                             }
                         }
                     }
@@ -157,23 +157,28 @@ main {
                     > .dropdown {
                         height: 0px;
                         overflow: hidden;
-                        visibility: hidden;
+                        display: block;
+
+                        > a {
+                            display: block;
+                        }
                     }
 
                     > .dropdown.active-dropdown {
                         display: block;
                         padding: 1px 20px;
-                        height: 150px;
+                        height: 120px;
                         visibility: visible;
 
                         a {
                             display: block;
+                            padding: 10px 12px;
                         }
                     }
 
                     .dropdown.active-dropdown ~ a {
                         &::after {
-                            content: "&#8964;" !important;
+                            content: "⌄" !important;
                         }
                     }
                 }
@@ -191,10 +196,10 @@ main {
     }
 
     .header.active-header {
-        height: 500px;
+        height: 410px;
     }
 
     .header.active-header.increase {
-        height: 600px;
+        height: 530px;
     }
 }
