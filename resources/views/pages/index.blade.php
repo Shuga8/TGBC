@@ -27,6 +27,8 @@
 				<img src="{{ asset('images/4.jpg') }}" alt="">
 			</div>
 
+			{{-- Automatic navigation --}}
+
 			<div class="navigation-auto">
 				<div class="auto-btn1"></div>
 				<div class="auto-btn2"></div>
@@ -34,6 +36,7 @@
 				<div class="auto-btn4"></div>
 			</div>
 
+			{{-- Manual Navigation --}}
 			<div class="navigation-manual">
 				<label class="manual-btn" for="radio1"></label>
 				<label class="manual-btn" for="radio2"></label>

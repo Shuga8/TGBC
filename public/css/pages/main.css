@@ -98,6 +98,7 @@ main {
     height: 100px;
     background: rgba(0, 0, 0, 0.7);
     overflow: hidden;
+    z-index: 10;
   }
   header .navbar {
     width: 100%;
@@ -129,6 +130,9 @@ main {
     display: block;
     padding: 10px;
   }
+  header .navbar .links > .link:not(:has(a.toggle-icon)) > a {
+    color: #fff;
+  }
   header .navbar .links > .link:not(:has(a.toggle-icon)):has(.dropdown) > a {
     display: flex;
     width: 100%;
@@ -155,6 +159,7 @@ main {
   header .navbar .links > .link:not(:has(a.toggle-icon)) > .dropdown.active-dropdown a {
     display: block;
     padding: 10px 12px;
+    color: #fff;
   }
   header .navbar .links > .link:not(:has(a.toggle-icon)) .dropdown.active-dropdown ~ a::after {
     content: "⌄" !important;
@@ -168,7 +173,8 @@ main {
     padding: 1rem;
   }
   .header.active-header {
-    height: 410px;
+    background: rgba(0, 0, 0, 0.95);
+    height: 420px;
   }
   .header.active-header.increase {
     height: 530px;
@@ -178,6 +184,7 @@ main {
   width: 100% !important;
   height: 500px;
   overflow: hidden;
+  position: relative;
 }
 .slider .slides {
   width: 500%;
@@ -198,4 +205,20 @@ main {
      object-fit: cover;
   aspect-ratio: 16/9;
   mix-blend-mode: difference;
+}
+.slider .slides > .navigation-manual {
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  z-index: 9;
+}
+.slider .slides > .navigation-manual > .manual-btn {
+  border: 2px solid #243070;
+  width: 20px;
+  height: 20px;
+  border-radius: 25px;
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

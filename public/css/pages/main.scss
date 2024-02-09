@@ -110,6 +110,7 @@ main {
         height: 100px;
         background: rgba($color: #000000, $alpha: 0.7);
         overflow: hidden;
+        z-index: 10;
 
         .navbar {
             width: 100%;
@@ -143,6 +144,10 @@ main {
                     display: block;
                     padding: 10px;
 
+                    > a {
+                        color: #fff;
+                    }
+
                     &:has(.dropdown) {
                         > a {
                             display: flex;
@@ -174,6 +179,7 @@ main {
                         a {
                             display: block;
                             padding: 10px 12px;
+                            color: #fff;
                         }
                     }
 
@@ -197,7 +203,8 @@ main {
     }
 
     .header.active-header {
-        height: 410px;
+        background: rgba($color: #000000, $alpha: 0.95);
+        height: 420px;
     }
 
     .header.active-header.increase {
@@ -209,6 +216,7 @@ main {
     width: 100% !important;
     height: 500px;
     overflow: hidden;
+    position: relative;
 
     .slides {
         width: 500%;
@@ -229,6 +237,24 @@ main {
                 object-fit: cover;
                 aspect-ratio: 16 / 9;
                 mix-blend-mode: difference;
+            }
+        }
+
+        > .navigation-manual {
+            position: absolute;
+            width: 100%;
+            bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            z-index: 9;
+
+            > .manual-btn {
+                border: 2px solid #243070;
+                width: 20px;
+                height: 20px;
+                border-radius: 25px;
+                cursor: pointer;
             }
         }
     }
