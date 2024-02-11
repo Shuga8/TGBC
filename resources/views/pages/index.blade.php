@@ -82,6 +82,10 @@
 		</div>
 	</div>
 
+	<div class="events-container">
+
+	</div>
+
 	@push('scripts')
 		<script type="text/javascript">
 			let counter = 1;
@@ -92,7 +96,7 @@
 				if (counter > 4) {
 					counter = 1;
 				}
-			}, 3000);
+			}, 5000);
 		</script>
 	@endpush
 
