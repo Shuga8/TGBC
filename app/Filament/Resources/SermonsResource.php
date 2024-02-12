@@ -47,7 +47,8 @@ class SermonsResource extends Resource
                                     ->required()
                                     ->live(onBlur: true)
                                     ->unique(),
-                                MarkdownEditor::make('description'),
+                                MarkdownEditor::make('description')
+                                    ->required(),
                             ])
 
                     ]),
@@ -61,15 +62,15 @@ class SermonsResource extends Resource
                                 Select::make('sermon_type')
                                     ->options([
                                         'audio' => 'audio',
-                                    ]),
-                                FileUpload::make('file_url')
+                                    ])->required(),
+                                FileUpload::make('file_url')->required()->label('Sermon audio'),
                             ])->collapsible(),
 
                         Section::make('Status')
 
                             ->schema([
                                 Toggle::make('is_visible'),
-                                DatePicker::make('published_at')
+                                DatePicker::make('published_at')->required()
                             ])
 
                     ]),
