@@ -14,6 +14,9 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\EventResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\EventResource\RelationManagers;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\TextInput;
 
 class EventResource extends Resource
@@ -30,9 +33,27 @@ class EventResource extends Resource
                     ->schema([
                         Section::make()
                             ->schema([
-                                TextInput::make('title')->required()->label('Event Title')
+                                TextInput::make('name')->required()->live(onBlur: true)->label('Event Title'),
+                                TextInput::make('hosted_by')->required()->label('Hosted By'),
+                                TextInput::make('hosted_for')->required()->label('Hosted For'),
+                            ]),
+
+                        Section::make()
+                            ->schema([
+                                TextInput::make('location')->required()->label('Location'),
+                                DatePicker::make('happning_at')->required()->label('Happening Time'),
                             ])
 
+                    ]),
+
+                Group::make()
+                    ->schema([
+                        Section::make()
+                            ->schema([
+                                FileUpload::make('image')->required()->label('Event Image'),
+                                MarkdownEditor::make('description')->required('Event Description'),
+
+                            ])
                     ])
             ]);
     }
