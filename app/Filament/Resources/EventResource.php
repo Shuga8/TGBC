@@ -18,6 +18,8 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\TextInput;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
 
 class EventResource extends Resource
 {
@@ -62,7 +64,9 @@ class EventResource extends Resource
     {
         return $table
             ->columns([
-                //
+                ImageColumn::make('image')->label('Flier'),
+                TextColumn::make('name')->sortable()->label('Event Name'),
+                TextColumn::make('hosted_by')->label('Event Host'),
             ])
             ->filters([
                 //
