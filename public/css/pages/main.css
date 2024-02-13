@@ -654,4 +654,47 @@ main {
      object-fit: cover;
   aspect-ratio: 4/3;
   mix-blend-mode: difference;
+}
+
+.mummy-overseer-page {
+  width: 100%;
+}
+.mummy-overseer-page .hero {
+  width: 100%;
+  height: 600px;
+  background: url("../../images/constellations-2609647_1280.jpg") no-repeat center center/cover;
+  mix-blend-mode: difference;
+}
+.mummy-overseer-page .hero .overlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mummy-overseer-page .overseer-content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+.mummy-overseer-page .overseer-content > div,
+.mummy-overseer-page .overseer-content > figure {
+  min-width: 280px;
+  width: 500px;
+}
+.mummy-overseer-page .overseer-content > div {
+  height: auto;
+}
+.mummy-overseer-page .overseer-content > figure {
+  min-height: 500px;
+}
+.mummy-overseer-page .overseer-content > figure > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 4/3;
+  mix-blend-mode: difference;
 }/*# sourceMappingURL=main.css.map */

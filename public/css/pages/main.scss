@@ -759,3 +759,53 @@ main {
         }
     }
 }
+
+.mummy-overseer-page {
+    width: 100%;
+
+    .hero {
+        width: 100%;
+        height: 600px;
+        background: url("../../images/constellations-2609647_1280.jpg")
+            no-repeat center center / cover;
+        mix-blend-mode: difference;
+
+        .overlay {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .overseer-content {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+
+        > div,
+        > figure {
+            min-width: 280px;
+            width: clamp(280px, 500px, 500px);
+        }
+
+        > div {
+            height: auto;
+        }
+
+        > figure {
+            min-height: 500px;
+
+            > img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                aspect-ratio: 4 / 3;
+                mix-blend-mode: difference;
+            }
+        }
+    }
+}
