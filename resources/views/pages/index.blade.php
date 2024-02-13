@@ -233,11 +233,32 @@
 		</div>
 	</section>
 
-	<section class="index-post-section py-15 px-9">
-		<h2 class="flex justify-center text-center text-xl font-semibold uppercase text-cyan-700"><x-heroicon-o-calendar-days
-				class="h-6 w-10 text-cyan-700" />Posts
-		</h2>
-	</section>
+	@unless ($posts->count() == 0)
+		<section class="index-post-section block px-9 pt-10">
+			<h2 class="flex justify-center text-center text-xl font-semibold uppercase text-cyan-700">
+				<x-heroicon-o-clipboard-document-list class="h-6 w-10 text-cyan-700" />Latest News
+			</h2>
+
+			<div class="inner-posts px-2 pt-8">
+				@foreach ($posts as $post)
+					<div class="card">
+						<figure lazy="true">
+							<img src="{{ asset('storage/' . $post->image_url) }}" alt="Post Image" loading="lazy">
+						</figure>
+
+						<div class="block p-1">
+
+							<small class="float-right flex text-gray-400"><x-heroicon-o-clock class="h-4 w-4 text-gray-400" />
+								{{ $post->created_at }}</small>
+							<h4 class="text-sm font-semibold text-teal-800">{{ $post->title }}</h4>
+							<div class="overflow-hidden text-ellipsis whitespace-nowrap text-sm text-gray-500">{{ $post->content }}</div>
+
+						</div>
+					</div>
+				@endforeach
+			</div>
+		</section>
+	@endunless
 
 	@push('links')
 		<link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />

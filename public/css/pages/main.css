@@ -468,4 +468,31 @@ main {
   -o-object-fit: cover;
      object-fit: cover;
   aspect-ratio: 4/3;
+}
+
+.index-post-section {
+  width: 100%;
+}
+.index-post-section > .inner-posts {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.index-post-section > .inner-posts > div {
+  min-width: 280px !important;
+  max-width: 530px !important;
+  height: 470px;
+}
+.index-post-section > .inner-posts > div > figure {
+  width: 100%;
+  height: 350px;
+}
+.index-post-section > .inner-posts > div > figure > img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4/3;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=main.css.map */
