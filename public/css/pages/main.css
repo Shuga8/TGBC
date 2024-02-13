@@ -611,4 +611,47 @@ main {
   justify-content: center;
   align-items: center;
   color: #fff;
+}
+
+.general-overseer-page {
+  width: 100%;
+}
+.general-overseer-page .hero {
+  width: 100%;
+  height: 600px;
+  background: url("../../images/universe-1044107_1280.jpg") no-repeat center center/cover;
+  mix-blend-mode: difference;
+}
+.general-overseer-page .hero .overlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.general-overseer-page .overseer-content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+.general-overseer-page .overseer-content > div,
+.general-overseer-page .overseer-content > figure {
+  min-width: 280px;
+  width: 500px;
+}
+.general-overseer-page .overseer-content > div {
+  height: auto;
+}
+.general-overseer-page .overseer-content > figure {
+  min-height: 500px;
+}
+.general-overseer-page .overseer-content > figure > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 4/3;
+  mix-blend-mode: difference;
 }/*# sourceMappingURL=main.css.map */

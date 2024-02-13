@@ -1,4 +1,4 @@
-<footer class="footer px-3 py-7" id="footer">
+<footer class="footer px-3 pb-2 pt-7" id="footer">
 	<section class="upper-section">
 		<div class="">
 			<figure class="logo" lazy="true">
@@ -26,7 +26,7 @@
 							</figure>
 
 							<div class="">
-								<p class="text-sm font-semibold">{{ $post->title }}</p>
+								<p class="text-sm font-semibold text-gray-300">{{ $post->title }}</p>
 								<time class="text-sm" datetime="{{ $post->created_at }}">{{ $post->created_at }}</time>
 							</div>
 						</div>
