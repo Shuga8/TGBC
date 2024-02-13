@@ -7,9 +7,13 @@
     transition: 0.3s ease-in-out;
 }
 
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden !important;
+}
 body {
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
 main {
@@ -574,6 +578,56 @@ main {
                     aspect-ratio: 4 / 3;
                     object-fit: cover;
                 }
+            }
+        }
+    }
+}
+
+.subsciption-container {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    background: url("../../images/jesus-3469896_640.jpg") no-repeat center
+        center / cover;
+    background-attachment: fixed;
+
+    .overlay {
+        position: absolute;
+        z-index: 5;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #000000, $alpha: 0.85);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+
+        > form {
+            display: flex;
+            flex-direction: row !important;
+            > input {
+                outline: none !important;
+                padding: 13px 12px;
+                border-radius: 7px 0px 0px 7px;
+                font-size: 13px;
+                min-width: 200px;
+                max-width: 300px;
+                margin-right: -10px;
+
+                &::placeholder {
+                    font-size: 12px;
+                }
+            }
+
+            button {
+                outline: none !important;
+                padding: 12px 8px 13px 8px;
+                border-radius: 0px 7px 7px 0px;
+                background: #243070;
+                color: #fff;
+                display: flex;
+                flex-direction: row !important;
+                width: 100px;
             }
         }
     }

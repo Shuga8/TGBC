@@ -122,7 +122,7 @@
 			nulla nemo atque id. </blockquote>
 
 		<div class="inner-about-container px-5 py-3">
-			<figure class="slide-right" lazy="true">
+			<figure class="slide-up" lazy="true">
 				<img src="{{ asset('images/kelly-sikkema-4le7k9XVYjE-unsplash.jpg') }}" alt="" loading="lazy">
 			</figure>
 
@@ -260,6 +260,16 @@
 		</section>
 	@endunless
 
+	<section class="subsciption-container mb-10">
+
+		<div class="overlay">
+			<form action="" method="POST">
+				@csrf
+				<input class="" name="email" type="email" placeholder="Subscribe to Our News Letter">
+				<button type="submit flex">Subscribe<x-heroicon-o-sparkles class="h-4 w-4 text-white" /></button>
+			</form>
+		</div>
+	</section>
 	@push('links')
 		<link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
 	@endpush
