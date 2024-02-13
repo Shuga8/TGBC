@@ -32,4 +32,13 @@ class PagesController extends Controller
 
         return view('pages.general_overseer')->with($data);
     }
+
+    public function mummy_go()
+    {
+        $data = [
+            'title' => 'Mummy G.O',
+        ];
+
+        return view('pages.mummy_go')->with($data);
+    }
 }
