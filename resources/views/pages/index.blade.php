@@ -90,7 +90,7 @@
 
 			<div class="cards-container py-5">
 				@foreach ($events as $event)
-					<div class="card">
+					<div class="card slide-up">
 						<figure>
 							<img class="" src="{{ asset('storage/' . $event->image) }}" alt="Flier">
 						</figure>
@@ -111,6 +111,53 @@
 
 		</div>
 	@endunless
+
+	<div class="about-index-container block w-full px-4 pb-2 pt-10">
+		<h2 class="text-center text-xl font-semibold uppercase text-cyan-700">About <x-heroicon-o-book-open
+				class="mx-auto block h-6 w-8 text-center" />
+		</h2>
+		<blockquote class="p-3 text-center text-gray-500">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident
+			cumque
+			laboriosam
+			nulla nemo atque id. </blockquote>
+
+		<div class="inner-about-container px-5 py-3">
+			<figure class="slide-right">
+				<img src="{{ asset('images/kelly-sikkema-4le7k9XVYjE-unsplash.jpg') }}" alt="">
+			</figure>
+
+			<div class="quote slide-left">
+				<h3>What We Do</h3>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita reprehenderit quos molestias odit sunt, quo quis
+					delectus minus ea, sit ullam! Quam ipsum odit provident repellendus velit pariatur deserunt quibusdam?
+				</p>
+				<p>
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, optio cupiditate accusamus quos repellendus aut
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ut sapiente provident modi suscipit iure unde
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<section class="three-images px-10 pb-4">
+
+		<figure>
+			<img src="{{ asset('images/im4-1024x654.jpg') }}" alt="">
+		</figure>
+
+		<figure>
+			<img src="{{ asset('images/men-768x397.jpg') }}" alt="">
+		</figure>
+
+		<figure>
+			<img src="{{ asset('images/im-1024x664.jpg') }}" alt="">
+		</figure>
+
+	</section>
+
 
 	@push('scripts')
 		<script type="text/javascript">

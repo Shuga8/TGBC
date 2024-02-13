@@ -10,6 +10,7 @@
 
 body {
   width: 100%;
+  overflow-x: hidden;
 }
 
 main {
@@ -364,4 +365,54 @@ main {
   mix-blend-mode: difference !important;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.inner-about-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.inner-about-container > figure > img {
+  width: 600px;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 4/3;
+  mix-blend-mode: difference;
+}
+.inner-about-container .quote {
+  width: 500px;
+  word-break: break-all;
+  word-wrap: break-word;
+  text-wrap: wrap;
+  line-height: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inner-about-container .quote h3 {
+  font-weight: 700;
+  font-size: larger;
+}
+
+.three-images {
+  width: 100%;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.three-images > figure {
+  width: 350px !important;
+  height: 250px;
+}
+.three-images > figure > img {
+  width: 100% !important;
+  height: 100% !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 4/3;
 }/*# sourceMappingURL=main.css.map */
