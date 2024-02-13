@@ -83,7 +83,7 @@
 	</div>
 
 	<div class="events-container">
-
+		<h2 class="text-sm"><x-heroicon-o-calendar-days />Calender</h2>
 	</div>
 
 	@push('scripts')
