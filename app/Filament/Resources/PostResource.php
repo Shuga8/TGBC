@@ -18,6 +18,8 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\TextInput;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
 
 class PostResource extends Resource
 {
@@ -32,15 +34,23 @@ class PostResource extends Resource
                 Group::make()
                     ->schema([
 
-                        TextInput::make('title')->required()->unique()->label("Post Title"),
-                        MarkdownEditor::make('content')->required()->label("Post Content"),
+                        Section::make()
+                            ->schema([
+                                TextInput::make('title')->required()->unique()->label("Post Title"),
+                                DatePicker::make('published_at')->required()->label('Publication date')->default(now()),
+                                FileUpload::make('image_url')->required()->label('Post Image'),
+                            ])
 
                     ]),
 
                 Group::make()
                     ->schema([
-                        FileUpload::make('image_url')->required()->label('Post Image'),
-                        DatePicker::make('published_at')->required()->label('Publication date')
+
+                        Section::make()
+                            ->schema([
+                                MarkdownEditor::make('content')->required()->label("Post Content"),
+
+                            ])
 
                     ])
 
@@ -52,7 +62,9 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
-                //
+                ImageColumn::make('image_url')->label('Post Image'),
+                TextColumn::make('title')->searchable()->sortable()->label('Post Title'),
+                TextColumn::make('created_at')->sortable()->label('Published At')
             ])
             ->filters([
                 //
