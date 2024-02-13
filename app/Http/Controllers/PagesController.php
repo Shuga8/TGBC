@@ -23,4 +23,13 @@ class PagesController extends Controller
 
         return view('pages.index')->with($data);
     }
+
+    public function general_overseer()
+    {
+        $data = [
+            'title' => 'General Overseer',
+        ];
+
+        return view('pages.general_overseer')->with($data);
+    }
 }

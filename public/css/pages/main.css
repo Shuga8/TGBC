@@ -59,7 +59,7 @@ main {
     position: relative;
   }
   .header .navbar .links > .link:not(:has(a.toggle-icon)) > a {
-    padding: 10px 14px;
+    padding: 14px 14px;
     color: #ffffff;
     position: relative; /* Added position relative */
   }

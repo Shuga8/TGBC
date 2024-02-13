@@ -6,14 +6,14 @@
 
 		<div class="links">
 			<div class="link">
-				<a href="">Home</a>
+				<a href="{{ route('home') }}">Home</a>
 			</div>
 
 			<div class="link dropable">
 				<a href="javascript:void(0)">About</a>
 
 				<div class="dropdown about-dropdown">
-					<a href="">Meet Our G.O</a>
+					<a href="{{ route('general_overseer') }}">Meet Our G.O</a>
 					<a href="">Our Mummy G.O</a>
 					<a href="">Meet Our Pastors</a>
 				</div>
