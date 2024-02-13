@@ -23,6 +23,14 @@
 		{{ $slot }}
 	</main>
 
+	@php
+
+		$footer_post = App\Models\Post::latest()->take(2)->get();
+
+	@endphp
+
+
+	@include('partials._footer', $posts = $footer_post)
 
 	<script src="{{ asset('js/pages/header.js') }}"></script>
 

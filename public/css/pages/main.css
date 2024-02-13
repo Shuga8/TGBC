@@ -548,4 +548,67 @@ main {
   display: flex;
   flex-direction: row !important;
   width: 100px;
+}
+
+.footer {
+  width: 100%;
+  background: #171717;
+  min-height: 400px;
+  display: block;
+  position: relative;
+}
+.footer .upper-section {
+  width: 100%;
+  min-height: 300px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Create columns with a minimum width of 200px */
+  grid-auto-rows: 200px; /* Set the height of each row */
+  gap: 10px; /* Set the gap between grid items */
+  grid-auto-flow: row;
+}
+.footer .upper-section > div {
+  padding: 10px;
+  text-align: center;
+}
+.footer .upper-section > div .logo {
+  width: 100%;
+}
+.footer .upper-section > div .logo img {
+  display: block;
+  margin: 0px auto;
+  width: 120px;
+}
+.footer .upper-section > div h5 {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.footer .upper-section > div .content address {
+  line-height: 2.2;
+}
+.footer .upper-section > div .content a {
+  display: block;
+  padding: 10px 0px;
+  color: #ccc;
+  font-size: 13px;
+}
+.footer .upper-section > div .content .card {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 10px;
+}
+.footer .upper-section > div .content .card:not(last-child) {
+  margin-bottom: 20px;
+}
+.footer .upper-section > div .content .card time {
+  float: left;
+  font-size: 8px;
+  color: rgb(249, 63, 94);
+}
+.footer .lower-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
 }/*# sourceMappingURL=main.css.map */
