@@ -67,6 +67,8 @@ class EventResource extends Resource
                 ImageColumn::make('image')->label('Flier'),
                 TextColumn::make('name')->sortable()->label('Event Name'),
                 TextColumn::make('hosted_by')->label('Event Host'),
+                TextColumn::make('happning_at')->label('Event Date'),
+                TextColumn::make('location')->label('Event Location'),
             ])
             ->filters([
                 //
