@@ -82,9 +82,35 @@
 		</div>
 	</div>
 
-	<div class="events-container">
-		<h2 class="text-sm"><x-heroicon-o-calendar-days />Calender</h2>
-	</div>
+	@unless ($events->count() == 0)
+		<div class="events-container w-full px-4 py-10">
+			<h2 class="flex justify-center text-center text-xl font-semibold uppercase text-cyan-700"><x-heroicon-o-calendar-days
+					class="h-6 w-10 text-cyan-700" />Events
+			</h2>
+
+			<div class="cards-container py-5">
+				@foreach ($events as $event)
+					<div class="card">
+						<figure>
+							<img class="" src="{{ asset('storage/' . $event->image) }}" alt="Flier">
+						</figure>
+						<div class="title font-bold uppercase">{{ $event->name }}</div>
+						<div class="block">
+							<span class="float-left flex text-sm text-cyan-600"><x-heroicon-o-map-pin class="h-5 w-4 text-cyan-600" />
+								{{ $event->location }}</span>
+							<i class="float-right flex text-sm text-gray-400"><x-heroicon-o-clock class="h-5 w-4 text-gray-400" />
+								{{ $event->happning_at }}</i>
+						</div>
+
+						<div class="float-left mt-1 block w-full">
+							<a class="text-sm text-blue-800" href="">See more</a>
+						</div>
+					</div>
+				@endforeach
+			</div>
+
+		</div>
+	@endunless
 
 	@push('scripts')
 		<script type="text/javascript">
