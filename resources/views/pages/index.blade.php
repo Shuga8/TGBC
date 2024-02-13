@@ -12,7 +12,7 @@
 
 			{{-- Images --}}
 			<div class="slide first">
-				<img src="{{ asset('images/1.jpg') }}" alt="">
+				<img src="{{ asset('images/1.jpg') }}" alt="" loading="lazy">
 				<div class="content first">
 					<h1 class="">{{ config('app.name') }}</h1>
 
@@ -24,7 +24,7 @@
 			</div>
 
 			<div class="slide">
-				<img src="{{ asset('images/2.jpg') }}" alt="">
+				<img src="{{ asset('images/2.jpg') }}" alt="" loading="lazy">
 
 				<div class="content">
 					<h1 class="">{{ config('app.name') }}</h1>
@@ -37,7 +37,7 @@
 			</div>
 
 			<div class="slide">
-				<img src="{{ asset('images/3.jpg') }}" alt="">
+				<img src="{{ asset('images/3.jpg') }}" alt="" loading="lazy">
 
 				<div class="content">
 					<h1 class="">{{ config('app.name') }}</h1>
@@ -50,7 +50,7 @@
 			</div>
 
 			<div class="slide">
-				<img src="{{ asset('images/4.jpg') }}" alt="">
+				<img src="{{ asset('images/4.jpg') }}" alt="" loading="lazy">
 
 				<div class="content">
 					<h1 class="">{{ config('app.name') }}</h1>
@@ -122,8 +122,8 @@
 			nulla nemo atque id. </blockquote>
 
 		<div class="inner-about-container px-5 py-3">
-			<figure class="slide-right">
-				<img src="{{ asset('images/kelly-sikkema-4le7k9XVYjE-unsplash.jpg') }}" alt="">
+			<figure class="slide-right" lazy="true">
+				<img src="{{ asset('images/kelly-sikkema-4le7k9XVYjE-unsplash.jpg') }}" alt="" loading="lazy">
 			</figure>
 
 			<div class="quote slide-left">
@@ -144,20 +144,98 @@
 
 	<section class="three-images px-10 pb-4">
 
-		<figure>
-			<img src="{{ asset('images/im4-1024x654.jpg') }}" alt="">
+		<figure lazy="true">
+			<img src="{{ asset('images/im4-1024x654.jpg') }}" alt="" loading="lazy">
 		</figure>
 
-		<figure>
-			<img src="{{ asset('images/men-768x397.jpg') }}" alt="">
+		<figure lazy="true">
+			<img src="{{ asset('images/men-768x397.jpg') }}" alt="" loading="lazy">
 		</figure>
 
-		<figure>
-			<img src="{{ asset('images/im-1024x664.jpg') }}" alt="">
+		<figure lazy="true">
+			<img src="{{ asset('images/im-1024x664.jpg') }}" alt="" loading="lazy">
 		</figure>
 
 	</section>
 
+
+	<section class="pastors-talk-container my-5">
+
+		<div class="overlay p-2">
+			<div class="swiper">
+				<!-- Additional required wrapper -->
+				<div class="swiper-wrapper">
+					<!-- Slides -->
+
+					<div class="swiper-slide pastor py-25">
+						<figure>
+							<img src="{{ asset('images/SXP_1962.jpg') }}" alt="">
+						</figure>
+
+						<div class="name text-center text-xl text-gray-200">REV DAN AKINGBELURE</div>
+						<div class="position text-center text-orange-400"><small>General Overseer</small></div>
+						<blockquote class="text-center text-sm text-gray-100">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam rem quisquam voluptates fuga.
+						</blockquote>
+					</div>
+
+					<div class="swiper-slide pastor py-25">
+						<figure>
+							<img src="{{ asset('images/SXP_2019 (2).jpg') }}" alt="">
+						</figure>
+
+						<div class="name text-center text-xl text-gray-200">REV MRS AKINGBELURE</div>
+						<div class="position text-center text-orange-400"><small>Mummy G.O</small></div>
+						<blockquote class="text-center text-sm text-gray-100">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam rem quisquam voluptates fuga.
+						</blockquote>
+					</div>
+
+
+					<div class="swiper-slide pastor py-25">
+						<figure>
+							<img src="{{ asset('images/Rev.-Mrs-Dorcas-Adetuyi-440x333.jpg') }}" alt="">
+						</figure>
+
+						<div class="name text-center text-xl text-gray-200">REV MRS DORCAS</div>
+						<div class="position text-center text-orange-400"><small>Senoir Pastor</small></div>
+						<blockquote class="text-center text-sm text-gray-100">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam rem quisquam voluptates fuga.
+						</blockquote>
+					</div>
+
+					<div class="swiper-slide pastor py-25">
+						<figure>
+							<img src="{{ asset('images/Rev.-Sunday-Olomojare.jpg-5.jpg-6-768x637.jpg') }}" alt="">
+						</figure>
+
+						<div class="name text-center text-xl text-gray-200">REV SUNDAY OLOMOJARE</div>
+						<div class="position text-center text-orange-400"><small>Senoir Pastor</small></div>
+						<blockquote class="text-center text-sm text-gray-100">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam rem quisquam voluptates fuga.
+						</blockquote>
+					</div>
+
+
+
+
+				</div>
+				<!-- If we need pagination -->
+				<div class="swiper-pagination"></div>
+
+				<!-- If we need navigation buttons -->
+				<div class="swiper-button-prev text-orange-800"></div>
+				<div class="swiper-button-next text-orange-800"></div>
+
+				<!-- If we need scrollbar -->
+				<div class="swiper-scrollbar"></div>
+			</div>
+		</div>
+	</section>
+
+	@push('links')
+		<link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
+	@endpush
 
 	@push('scripts')
 		<script type="text/javascript">
@@ -170,6 +248,33 @@
 					counter = 1;
 				}
 			}, 5000);
+		</script>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+		<script>
+			const swiper = new Swiper('.swiper', {
+				slidesPerView: 3,
+				spaceBetween: 15,
+				// Optional parameters
+				direction: 'horizontal',
+				loop: true,
+
+				/* // If we need pagination
+				pagination: {
+					el: '.swiper-pagination',
+				}, */
+
+				// Navigation arrows
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+
+				/* // And if we need scrollbar
+				scrollbar: {
+					el: '.swiper-scrollbar',
+				}, */
+			});
 		</script>
 	@endpush
 

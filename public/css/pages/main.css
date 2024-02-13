@@ -415,4 +415,57 @@ main {
   -o-object-fit: cover;
      object-fit: cover;
   aspect-ratio: 4/3;
+}
+
+.pastors-talk-container {
+  width: 100%;
+  height: 500px;
+  background: url("../../images/cathedral-3457933_1920.jpg") no-repeat center center fixed;
+  position: relative;
+}
+.pastors-talk-container .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+}
+.pastors-talk-container .overlay .swiper {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+.pastors-talk-container .overlay .swiper .swiper-wrapper {
+  height: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pastors-talk-container .overlay .swiper .swiper-wrapper .pastor {
+  width: 300px !important;
+  height: 80% !important;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 7px;
+  padding-top: 90px;
+  padding-inline: 20px;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+.pastors-talk-container .overlay .swiper .swiper-wrapper .pastor > figure {
+  display: block !important;
+  margin: 0px auto;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.pastors-talk-container .overlay .swiper .swiper-wrapper .pastor > figure > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 4/3;
 }/*# sourceMappingURL=main.css.map */
