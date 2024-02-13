@@ -83,7 +83,7 @@
 	</div>
 
 	@unless ($events->count() == 0)
-		<div class="events-container w-full px-4 py-10">
+		<div class="events-container w-full px-4 py-11">
 			<h2 class="flex justify-center text-center text-xl font-semibold uppercase text-cyan-700"><x-heroicon-o-calendar-days
 					class="h-6 w-10 text-cyan-700" />Events
 			</h2>
@@ -231,6 +231,12 @@
 				<div class="swiper-scrollbar"></div>
 			</div>
 		</div>
+	</section>
+
+	<section class="index-post-section py-15 px-9">
+		<h2 class="flex justify-center text-center text-xl font-semibold uppercase text-cyan-700"><x-heroicon-o-calendar-days
+				class="h-6 w-10 text-cyan-700" />Posts
+		</h2>
 	</section>
 
 	@push('links')
