@@ -1,86 +1,76 @@
 <x-layout :title="$title">
 
-	<div class="slider">
-		<div class="slides">
 
-			{{-- Radios for slides --}}
 
-			<input id="radio1" name="radio-btn" type="radio" checked>
-			<input id="radio2" name="radio-btn" type="radio">
-			<input id="radio3" name="radio-btn" type="radio">
-			<input id="radio4" name="radio-btn" type="radio">
-
-			{{-- Images --}}
-			<div class="slide first">
-				<img src="{{ asset('images/1.jpg') }}" alt="" loading="lazy">
-				<div class="content first">
-					<h1 class="">{{ config('app.name') }}</h1>
-
-					<div class="actions slide-up">
-						<a class="more" href="">More</a>
-						<a class="donate" href="">Donate</a>
-					</div>
-				</div>
+	<div class="relative w-full" id="default-carousel" data-carousel="slide">
+		<!-- Carousel wrapper -->
+		<div class="carousel-images relative overflow-hidden">
+			<!-- Item 1 -->
+			<div class="hidden duration-700 ease-in-out" data-carousel-item>
+				<img class="absolute left-1/2 top-1/2 block w-full -translate-x-1/2 -translate-y-1/2"
+					src="{{ asset('images/2.jpg') }}" alt="..." loading="lazy">
 			</div>
-
-			<div class="slide">
-				<img src="{{ asset('images/2.jpg') }}" alt="" loading="lazy">
-
-				<div class="content">
-					<h1 class="">{{ config('app.name') }}</h1>
-
-					<div class="actions">
-						<a class="more" href="">More</a>
-						<a class="donate" href="">Donate</a>
-					</div>
-				</div>
+			<!-- Item 2 -->
+			<div class="hidden duration-700 ease-in-out" data-carousel-item>
+				<img class="absolute left-1/2 top-1/2 block w-full -translate-x-1/2 -translate-y-1/2"
+					src="{{ asset('images/3.jpg') }}" alt="...">
 			</div>
-
-			<div class="slide">
-				<img src="{{ asset('images/3.jpg') }}" alt="" loading="lazy">
-
-				<div class="content">
-					<h1 class="">{{ config('app.name') }}</h1>
-
-					<div class="actions">
-						<a class="more" href="">More</a>
-						<a class="donate" href="">Donate</a>
-					</div>
-				</div>
+			<!-- Item 3 -->
+			<div class="hidden duration-700 ease-in-out" data-carousel-item>
+				<img class="absolute left-1/2 top-1/2 block w-full -translate-x-1/2 -translate-y-1/2"
+					src="{{ asset('images/4.jpg') }}" alt="...">
 			</div>
-
-			<div class="slide">
-				<img src="{{ asset('images/4.jpg') }}" alt="" loading="lazy">
-
-				<div class="content">
-					<h1 class="">{{ config('app.name') }}</h1>
-
-					<div class="actions">
-						<a class="more" href="">More</a>
-						<a class="donate" href="">Donate</a>
-					</div>
-				</div>
+			{{-- <!-- Item 4 -->
+			<div class="hidden duration-700 ease-in-out" data-carousel-item>
+				<img class="absolute left-1/2 top-1/2 block w-full -translate-x-1/2 -translate-y-1/2"
+					src="/docs/images/carousel/carousel-4.svg" alt="...">
 			</div>
-
-
-
-			{{-- Automatic navigation --}}
-			<div class="navigation-auto">
-				<div class="auto-btn1"></div>
-				<div class="auto-btn2"></div>
-				<div class="auto-btn3"></div>
-				<div class="auto-btn4"></div>
-			</div>
-
-			{{-- Manual Navigation --}}
-			<div class="navigation-manual">
-				<label class="manual-btn" for="radio1"></label>
-				<label class="manual-btn" for="radio2"></label>
-				<label class="manual-btn" for="radio3"></label>
-				<label class="manual-btn" for="radio4"></label>
-			</div>
+			<!-- Item 5 -->
+			<div class="hidden duration-700 ease-in-out" data-carousel-item>
+				<img class="absolute left-1/2 top-1/2 block w-full -translate-x-1/2 -translate-y-1/2"
+					src="/docs/images/carousel/carousel-5.svg" alt="...">
+			</div> --}}
 		</div>
+		<!-- Slider indicators -->
+		<div class="absolute bottom-5 left-1/2 z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse">
+			<button class="h-3 w-3 rounded-full" data-carousel-slide-to="0" type="button" aria-current="true"
+				aria-label="Slide 1"></button>
+			<button class="h-3 w-3 rounded-full" data-carousel-slide-to="1" type="button" aria-current="false"
+				aria-label="Slide 2"></button>
+			<button class="h-3 w-3 rounded-full" data-carousel-slide-to="2" type="button" aria-current="false"
+				aria-label="Slide 3"></button>
+			{{-- <button class="h-3 w-3 rounded-full" data-carousel-slide-to="3" type="button" aria-current="false"
+				aria-label="Slide 4"></button>
+			<button class="h-3 w-3 rounded-full" data-carousel-slide-to="4" type="button" aria-current="false"
+				aria-label="Slide 5"></button> --}}
+		</div>
+		<!-- Slider controls -->
+		<button
+			class="group absolute start-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 outline-none focus:outline-none"
+			data-carousel-prev type="button">
+			<span
+				class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/30 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70">
+				<svg class="h-4 w-4 text-white rtl:rotate-180 dark:text-gray-800" aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+				</svg>
+				<span class="sr-only">Previous</span>
+			</span>
+		</button>
+		<button
+			class="group absolute end-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 outline-none focus:outline-none"
+			data-carousel-next type="button">
+			<span
+				class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/30 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70">
+				<svg class="h-4 w-4 text-white rtl:rotate-180 dark:text-gray-800" aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+				</svg>
+				<span class="sr-only">Next</span>
+			</span>
+		</button>
 	</div>
+
 
 	@unless ($events->count() == 0)
 		<div class="events-container w-full px-4 py-11">
@@ -275,17 +265,6 @@
 	@endpush
 
 	@push('scripts')
-		<script type="text/javascript">
-			let counter = 1;
-
-			setInterval(() => {
-				document.getElementById("radio" + counter).checked = true;
-				counter++;
-				if (counter > 4) {
-					counter = 1;
-				}
-			}, 5000);
-		</script>
 		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 		<script>
