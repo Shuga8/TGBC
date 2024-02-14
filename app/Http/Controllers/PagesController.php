@@ -44,5 +44,10 @@ class PagesController extends Controller
 
     public function contact()
     {
+        $data = [
+            'title' => 'Contact Us'
+        ];
+
+        return view('pages.contact')->with($data);
     }
 }
