@@ -19,6 +19,8 @@
 
 	@include('partials._navbar')
 
+	<x-flash-message />
+
 	<main>
 		{{ $slot }}
 	</main>
