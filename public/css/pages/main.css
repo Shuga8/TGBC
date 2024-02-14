@@ -584,7 +584,7 @@ main {
   margin-bottom: 20px;
 }
 .footer .upper-section > div .content address {
-  line-height: 2.2;
+  line-height: 1.5;
 }
 .footer .upper-section > div .content a {
   display: block;
@@ -714,4 +714,10 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.contact-page .contact-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }/*# sourceMappingURL=main.css.map */

@@ -41,7 +41,8 @@
 			<div class="content">
 				<a href="tel:+234(101-101-101)">+234(101-101-101)</a>
 				<a href="mailto:info@totalgospelbc.org">Info@totalgospelbc.org</a>
-				<address class="text-sm text-gray-400">22 Gomez Street Majek, Lekki Epe Expressway, Eti-Osa LGA, Lagos State
+				<address class="text-sm text-gray-400">20-22, Agboola Gomez Street, Idiagbon Estate, Majek Bus Stop, Opposite Fara
+					Park,, Lekki-Epe Expressway, Lekki
 				</address>
 			</div>
 		</div>

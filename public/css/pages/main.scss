@@ -673,7 +673,7 @@ main {
 
             .content {
                 address {
-                    line-height: 2.2;
+                    line-height: 1.5;
                 }
 
                 a {
@@ -827,5 +827,12 @@ main {
             align-items: center;
             justify-content: center;
         }
+    }
+
+    .contact-form {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 }
