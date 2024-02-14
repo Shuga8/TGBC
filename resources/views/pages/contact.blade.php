@@ -17,14 +17,20 @@
 					<div class="mx-auto max-w-2xl text-center">
 						<h2 class="text-xl font-bold tracking-tight text-gray-900 sm:text-xl">Send Us A Message</h2>
 					</div>
-					<form class="mt-8 max-w-xl sm:mt-8" action="#" method="POST">
+					<form class="mt-8 max-w-xl sm:mt-8" action="{{ route('send_contact_message') }}" method="POST"
+						enctype="application/x-www-form-urlencoded">
+						@csrf
 						<div class="grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-2">
 							<div>
 								<label class="block text-sm font-semibold leading-6 text-gray-900" for="first-name">First name</label>
 								<div class="mt-2.5">
 									<input
 										class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-										id="first-name" name="first-name" type="text" autocomplete="given-name">
+										id="first-name" name="firstname" type="text" value="{{ old('firstname') }}" autocomplete="given-name">
+
+									@error('firstname')
+										<p class="error text-sm text-red-600">{{ $message }}</p>
+									@enderror
 								</div>
 							</div>
 							<div>
@@ -32,7 +38,10 @@
 								<div class="mt-2.5">
 									<input
 										class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-										id="last-name" name="last-name" type="text" autocomplete="family-name">
+										id="last-name" name="lastname" type="text" value="{{ old('lastname') }}" autocomplete="family-name">
+									@error('lastname')
+										<p class="error text-sm text-red-600">{{ $message }}</p>
+									@enderror
 								</div>
 							</div>
 
@@ -41,7 +50,11 @@
 								<div class="mt-2.5">
 									<input
 										class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-										id="email" name="email" type="email" autocomplete="email">
+										id="email" name="email" type="email" value="{{ old('email') }}" autocomplete="email">
+
+									@error('email')
+										<p class="error text-sm text-red-600">{{ $message }}</p>
+									@enderror
 								</div>
 							</div>
 
@@ -50,7 +63,11 @@
 								<div class="mt-2.5">
 									<textarea
 									 class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-									 id="message" name="message" rows="4"></textarea>
+									 id="message" name="message" rows="4">
+                                    {{ old('message') }}</textarea>
+									@error('message')
+										<p class="error text-sm text-red-600">{{ $message }}</p>
+									@enderror
 								</div>
 							</div>
 
@@ -74,4 +91,73 @@
 		</div>
 	</section>
 
+	<h3 class="my-2 text-center text-xl font-semibold text-teal-800">Our Locations</h3>
+	<section
+		class="church-branches flex flex-wrap gap-x-8 gap-y-4 px-2 py-3 sm:flex-col sm:flex-wrap sm:justify-center md:flex-wrap lg:flex-row lg:justify-normal">
+
+		<div
+			class="max-w-sm rounded-lg border border-gray-200 bg-white p-6 text-center shadow dark:border-gray-700 dark:bg-gray-800">
+			<x-heroicon-o-map-pin class="mx-auto mb-2 h-10 w-10 text-center text-blue-800" />
+
+			<h5 class="mb-2 text-2xl font-semibold uppercase tracking-tight text-gray-900 dark:text-white">Choice People Church.
+			</h5>
+			<p class="mb-3 font-normal capitalize text-gray-500 dark:text-gray-400">18 Oyegoke street off Rufai/Daudu street
+				Mafoluku
+				Oshodi, Lagos State.</p>
+		</div>
+
+		<div
+			class="max-w-sm rounded-lg border border-gray-200 bg-white p-6 text-center shadow dark:border-gray-700 dark:bg-gray-800">
+			<x-heroicon-o-map-pin class="mx-auto mb-2 h-10 w-10 text-center text-blue-800" />
+
+			<h5 class="mb-2 text-2xl font-semibold uppercase tracking-tight text-gray-900 dark:text-white">IKOTUN- EGBE BRANCH
+			</h5>
+			<p class="mb-3 font-normal capitalize text-gray-500 dark:text-gray-400">24, Adewalag Street Off Modupe Shitta Liasu
+				Road Ile-iwe
+				Bus Stop Ikotun,Lagos
+			</p>
+		</div>
+
+		<div
+			class="max-w-sm rounded-lg border border-gray-200 bg-white p-6 text-center shadow dark:border-gray-700 dark:bg-gray-800">
+			<x-heroicon-o-map-pin class="mx-auto mb-2 h-10 w-10 text-center text-blue-800" />
+
+			<h5 class="mb-2 text-2xl font-semibold uppercase tracking-tight text-gray-900 dark:text-white">House of grace and
+				mercy
+			</h5>
+			<p class="mb-3 font-normal capitalize text-gray-500 dark:text-gray-400">28 dare street ojokodo okitipupa ondo state
+			</p>
+		</div>
+
+		<div
+			class="max-w-sm rounded-lg border border-gray-200 bg-white p-6 text-center shadow dark:border-gray-700 dark:bg-gray-800">
+			<x-heroicon-o-map-pin class="mx-auto mb-2 h-10 w-10 text-center text-blue-800" />
+
+			<h5 class="mb-2 text-2xl font-semibold uppercase tracking-tight text-gray-900 dark:text-white">Sanctuary of
+				David,Obere
+
+			</h5>
+			<p class="mb-3 font-normal capitalize text-gray-500 dark:text-gray-400">1-3, Church Sreet,Mesan Obere, Okitipupa,
+				Ondo State
+			</p>
+		</div>
+
+		<div
+			class="max-w-sm rounded-lg border border-gray-200 bg-white p-6 text-center shadow dark:border-gray-700 dark:bg-gray-800">
+			<x-heroicon-o-map-pin class="mx-auto mb-2 h-10 w-10 text-center text-blue-800" />
+
+			<h5 class="mb-2 text-2xl font-semibold uppercase tracking-tight text-gray-900 dark:text-white">TGBC Peace Haven</h5>
+			<p class="mb-3 font-normal capitalize text-gray-500 dark:text-gray-400">33 Babatope street off Brown road Agenda
+				Surulere Lagos</p>
+		</div>
+
+		<div
+			class="max-w-sm rounded-lg border border-gray-200 bg-white p-6 text-center shadow dark:border-gray-700 dark:bg-gray-800">
+			<x-heroicon-o-map-pin class="mx-auto mb-2 h-10 w-10 text-center text-blue-800" />
+
+			<h5 class="mb-2 text-2xl font-semibold uppercase tracking-tight text-gray-900 dark:text-white">Mount Zion Chapel</h5>
+			<p class="mb-3 font-normal capitalize text-gray-500 dark:text-gray-400">3, Mosunmola Etti Str, Kudeyibu Estate,
+				Ijegun.</p>
+		</div>
+	</section>
 </x-layout>

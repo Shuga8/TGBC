@@ -18,3 +18,4 @@ Route::get('/', [PagesController::class, 'index'])->name('home');
 Route::get('/general-overseer', [PagesController::class, 'general_overseer'])->name('general_overseer');
 Route::get('/mummy-go', [PagesController::class, 'mummy_go'])->name('mummy_go');
 Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
+Route::post('/contact', [PagesController::class, 'send'])->name('send_contact_message');

@@ -834,5 +834,9 @@ main {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+
+        p.error {
+            font-size: 8px;
+        }
     }
 }

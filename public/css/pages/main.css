@@ -720,4 +720,7 @@ main {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+.contact-page .contact-form p.error {
+  font-size: 8px;
 }/*# sourceMappingURL=main.css.map */

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactRequest;
 use App\Models\Event;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -49,5 +50,10 @@ class PagesController extends Controller
         ];
 
         return view('pages.contact')->with($data);
+    }
+
+    public function send(ContactRequest $request)
+    {
+        $request->validated($request->all());
     }
 }
