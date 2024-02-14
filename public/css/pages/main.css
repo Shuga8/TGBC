@@ -288,19 +288,22 @@ main {
   position: absolute;
   z-index: 5;
   background: rgba(0, 0, 0, 0.85);
-  justify-content: center;
-  align-items: center;
 }
 .pastors-talk-container .overlay .swiper {
   width: 100%;
   height: 100%;
   padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .pastors-talk-container .overlay .swiper .swiper-wrapper {
   height: 100% !important;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  row-gap: 15px;
 }
 .pastors-talk-container .overlay .swiper .swiper-wrapper .pastor {
   width: 300px !important;
