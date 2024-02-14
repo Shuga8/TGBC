@@ -41,4 +41,8 @@ class PagesController extends Controller
 
         return view('pages.mummy_go')->with($data);
     }
+
+    public function contact()
+    {
+    }
 }

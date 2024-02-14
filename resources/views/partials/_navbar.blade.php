@@ -32,7 +32,7 @@
 			</div>
 
 			<div class="link">
-				<a href="">Contact</a>
+				<a href="{{ route('contact') }}">Contact</a>
 			</div>
 
 			<div class="link">
