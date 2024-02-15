@@ -253,7 +253,7 @@
 	<section class="subsciption-container mb-10">
 
 		<div class="overlay">
-			<form action="" method="POST">
+			<form action="{{ route('subscribe') }}" method="POST">
 				@csrf
 				<input class="" name="email" type="email" placeholder="Subscribe to Our News Letter">
 				<button type="submit flex">Subscribe<x-heroicon-o-sparkles class="h-4 w-4 text-white" /></button>
