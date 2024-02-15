@@ -253,10 +253,11 @@
 	<section class="subsciption-container mb-10">
 
 		<div class="overlay">
-			<form action="{{ route('subscribe') }}" method="POST">
+			<form name="subscriptionForm" action="{{ route('subscribe') }}" method="POST">
 				@csrf
 				<input class="" name="email" type="email" placeholder="Subscribe to Our News Letter">
-				<button type="submit flex">Subscribe<x-heroicon-o-sparkles class="h-4 w-4 text-white" /></button>
+				<button id="subscribe-btn" type="submit flex">Subscribe<x-heroicon-o-sparkles
+						class="h-4 w-4 text-white" /></button>
 			</form>
 		</div>
 	</section>
@@ -265,6 +266,69 @@
 	@endpush
 
 	@push('scripts')
+		<script>
+			document.querySelector("#subscribe-btn").addEventListener("click", function(e) {
+				e.preventDefault();
+
+				let email = document.forms['subscriptionForm']['email'].value;
+
+				let formData = new FormData();
+				formData.append('email', email);
+
+				var xhr = new XMLHttpRequest();
+
+				xhr.open('POST', "{{ route('subscribe') }}", true);
+
+				xhr.setRequestHeader('X-CSRF-TOKEN', "{{ csrf_token() }}");
+				xhr.setRequestHeader('Accept', "application/json");
+
+				xhr.onload = function() {
+
+					if (xhr.readyState == 4) {
+						let response = JSON.parse(xhr.response);
+
+						console.log(response);
+
+						if (response.message) {
+							let error = document.querySelector(".error-notify");
+							error.querySelector(".response-message").innerText = response.message;
+							error.classList.remove("hidden");
+							setTimeout(() => {
+								error.querySelector(".response-message").innerText = "";
+								error.classList.add("hidden");
+							}, 1000);
+						}
+
+						if (response.success) {
+							let success = document.querySelector(".success-notify");
+							success.querySelector(".response-message").innerText = response.success;
+							success.classList.remove("hidden");
+							setTimeout(() => {
+								success.querySelector(".response-message").innerText = "";
+								success.classList.add("hidden");
+							}, 1000);
+						}
+
+						if (response.error) {
+							let error = document.querySelector(".error-notify");
+							error.querySelector(".response-message").innerText = response.error;
+							error.classList.remove("hidden");
+							setTimeout(() => {
+								error.querySelector(".response-message").innerText = "";
+								error.classList.add("hidden");
+							}, 1000);
+						}
+					}
+				}
+
+				xhr.onerror = function() {
+					console.error("Request failed");
+				};
+
+				xhr.send(formData);
+
+			});
+		</script>
 		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 		<script>

@@ -10,10 +10,8 @@ class SubscribersController extends Controller
     public function index(SubscriptionRequest $request)
     {
 
-        if ($request->validated($request->all())) {
-            return back()->with('message', 'continue');
-        } else {
-            return back()->with('message', 'Error');
-        }
+        $request->validated($request->all());
+
+        return response()->json(['success' => 'You can continue']);
     }
 }
