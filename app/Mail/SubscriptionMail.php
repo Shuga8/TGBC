@@ -18,7 +18,6 @@ class SubscriptionMail extends Mailable
      */
     public function __construct(public $data)
     {
-        //
     }
 
     /**

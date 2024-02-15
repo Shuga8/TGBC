@@ -18,21 +18,21 @@ class SubscribersController extends Controller
             'email' => $request->email
         ];
 
-        dispatch(new NewsletterSubscriptionJob($data));
-
         try {
 
             DB::beginTransaction();
+
+            dispatch(new NewsletterSubscriptionJob($data));
 
             Subscriber::create($data);
 
             DB::commit();
 
-            return $this->success(['success' => 'Subscription successful']);
+            return $this->success(null, 'Subscription successful');
         } catch (\Throwable $th) {
 
             DB::rollBack();
-            return $this->error(['error' => $th->getMessage], null, $th->getCode ?: 406);
+            return $this->error(null, $th->getMessage(), $th->getCode() ?: 406);
         }
     }
 }

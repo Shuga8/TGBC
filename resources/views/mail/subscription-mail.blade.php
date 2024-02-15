@@ -227,13 +227,13 @@
 											<td class="imgHero" style="padding-bottom: 20px" align="center" valign="top">
 												<!-- Hero Image // -->
 												<a href="#" style="text-decoration: none" target="_blank">
-													<img src="https://res.cloudinary.com/onethought/image/upload/v1684237860/SPECTRANETIMG_v55mcu.png"
-														alt=""
+													<img src="https://phemedom.com/logo_300X300.png" alt=""
 														style="
 																	width: 100%;
 																	max-width: 300px;
 																	height: auto;
 																	display: block;
+																	mix-blend-mode: difference;
 																"
 														width="400" border="0" />
 												</a>
@@ -264,7 +264,7 @@
 																padding: 0;
 																margin: 0;
 															">
-													Hi {{ testname }},
+													Hi {{ $data['email'] }},
 												</h2>
 											</td>
 										</tr>
@@ -293,7 +293,7 @@
 																padding: 0;
 																margin: 0;
 															">
-													<b>Confidential Information</b>
+													<b></b>
 												</h4>
 											</td>
 										</tr>
@@ -319,12 +319,8 @@
 																			padding: 0;
 																			margin: 0;
 																		">
-																{{ message }}
-																<br>
-																<span style="text-transform: uppercase; font-weight: 600">
-																	{{ apiKey }} <br>
-																</span>
-																Footer Message Here
+																You have successfully subscribed to TOTAL GOSPEL BIBLE CHURCH'S TOTAL MAN Newsletter.
+
 															</p>
 														</td>
 													</tr>
@@ -458,7 +454,7 @@
 																	text-decoration: underline;
 																"
 														target="_blank">
-														CRYPTO DELUXE FX Team
+														Total Gospel Bible Church
 													</a>
 													<br />
 												</p>
@@ -490,7 +486,7 @@
 																padding: 0;
 																margin: 0;
 															">
-													&copy;&nbsp;CRYPTO DELUXE FX 2024
+													&copy;&nbsp;Total Gospel Bible Church 2024
 												</p>
 											</td>
 										</tr>
@@ -557,12 +553,12 @@
 																margin: 0;
 															">
 													If you have any quetions please contact us
-													<a href="mailto:admin@cryptodeluxefx.com"
+													<a href="mailto:admin@totalgospelbc.org"
 														style="
 																	color: #777777;
 																	text-decoration: underline;
 																"
-														target="_blank">admin@cryptodeluxefx.com</a><br />
+														target="_blank">admin@totalgospelbc.org</a><br />
 												</p>
 											</td>
 										</tr>

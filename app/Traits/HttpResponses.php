@@ -8,7 +8,7 @@ trait HttpResponses
     {
         return response()->json([
             'status' => 'Request was successfull',
-            'message' => $message,
+            'success' => $message,
             'data' => $data
         ], $code);
     }
@@ -17,7 +17,7 @@ trait HttpResponses
     {
         return response()->json([
             'status' => 'Error has occured...',
-            'message' => $message,
+            'error' => $message,
             'data' => $data
         ], $code);
     }
