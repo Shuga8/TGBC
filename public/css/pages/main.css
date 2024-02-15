@@ -580,4 +580,48 @@ main {
 }
 .contact-page .contact-form p.error {
   font-size: 8px;
+}
+
+.pastors-page {
+  width: 100%;
+}
+.pastors-page .hero {
+  width: 100%;
+  height: 600px;
+  background: url("../../images/kelly-sikkema-4le7k9XVYjE-unsplash.jpg") no-repeat center center/cover;
+  mix-blend-mode: difference;
+}
+.pastors-page .hero .overlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pastors-page .pastors-content {
+  width: 100%;
+  display: flex;
+  row-gap: 10px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  flex-wrap: wrap;
+}
+.pastors-page .pastors-content > .card {
+  width: 230px;
+  height: 250px;
+  overflow: hidden;
+}
+.pastors-page .pastors-content > .card figure {
+  width: 100%;
+  height: 70%;
+  position: relative;
+  overflow: hidden;
+}
+.pastors-page .pastors-content > .card figure img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4/3;
+  -o-object-fit: contain;
+     object-fit: contain;
+  mix-blend-mode: exclusion;
 }/*# sourceMappingURL=main.css.map */

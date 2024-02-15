@@ -15,7 +15,7 @@
 				<div class="dropdown about-dropdown">
 					<a href="{{ route('general_overseer') }}">Meet Our G.O</a>
 					<a href="{{ route('mummy_go') }}">Our Mummy G.O</a>
-					<a href="">Meet Our Pastors</a>
+					<a href="{{ route('pastors') }}">Meet Our Pastors</a>
 				</div>
 			</div>
 

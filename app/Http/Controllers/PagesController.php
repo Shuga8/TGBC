@@ -56,4 +56,14 @@ class PagesController extends Controller
     {
         $request->validated($request->all());
     }
+
+    public function pastors()
+    {
+
+        $data = [
+            'title' => 'Our Pastors'
+        ];
+
+        return view('pages.pastors')->with($data);
+    }
 }
