@@ -16,7 +16,7 @@ class SubscriptionMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct(public $data)
     {
         //
     }
@@ -28,6 +28,7 @@ class SubscriptionMail extends Mailable
     {
         return new Envelope(
             subject: 'Subscription Mail',
+
         );
     }
 
@@ -37,7 +38,7 @@ class SubscriptionMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'mail.subscription-mail',
         );
     }
 
