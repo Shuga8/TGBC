@@ -691,4 +691,59 @@ main {
   padding: 8px 12px;
   color: #fff;
   background: #0c1e80;
+}
+
+.single-blog-page {
+  width: 100%;
+}
+.single-blog-page .hero {
+  width: 100%;
+  height: 400px;
+  background: url("../../images/bible-7092020_1280.jpg") no-repeat center center/cover;
+  mix-blend-mode: exclusion;
+}
+.single-blog-page .hero .overlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+}
+.single-blog-page .hero .overlay h2 {
+  color: #fff;
+}
+.single-blog-page .content .post {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.single-blog-page .content .post figure {
+  display: block;
+  width: 100%;
+}
+.single-blog-page .content .post figure img {
+  width: 800px !important;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 4/3;
+  margin: 0px auto;
+}
+.single-blog-page .content .post h3 {
+  text-align: center;
+}
+.single-blog-page .content .post .inner-content {
+  line-height: 1.9;
+}
+.single-blog-page .content .post time {
+  width: 100%;
+  display: flex;
+  color: #eb2406;
+  justify-content: right;
+  justify-self: flex-end;
+  text-align: right;
+  font-weight: 600;
 }/*# sourceMappingURL=main.css.map */

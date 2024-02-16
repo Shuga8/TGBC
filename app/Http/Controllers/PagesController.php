@@ -78,4 +78,21 @@ class PagesController extends Controller
 
         return view('posts.index')->with($data);
     }
+
+    public function single($id)
+    {
+
+        $post = Post::where('id', $id)->first();
+
+        if ($post->count() == 0) {
+            return abort(403, "No such post");
+        }
+
+        $data = [
+            'title' => strtoupper($post->title),
+            'post' => $post
+        ];
+
+        return view('posts.single')->with($data);
+    }
 }

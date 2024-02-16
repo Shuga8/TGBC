@@ -21,12 +21,13 @@
 						<div class="card">
 							<figure lazy="true">
 								<a href="{{ route('blog.single', $post->id) }}">
-									<img class="w-15 h-9" src="{{ asset('storage/' . $post->image_url) }}" alt="" loading="lazy">
+									<img class="w-15 h-12" src="{{ asset('storage/' . $post->image_url) }}" alt="" loading="lazy">
 								</a>
 							</figure>
 
 							<div class="">
-								<p class="text-sm font-semibold text-gray-300">{{ $post->title }}</p>
+								<p class="text-sm font-semibold text-gray-300"><a
+										href="{{ route('blog.single', $post->id) }}">{{ $post->title }}</a></p>
 								<time class="text-sm" datetime="{{ $post->created_at }}">{{ $post->created_at }}</time>
 							</div>
 						</div>
