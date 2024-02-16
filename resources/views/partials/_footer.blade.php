@@ -20,7 +20,7 @@
 					@foreach ($posts as $post)
 						<div class="card">
 							<figure lazy="true">
-								<a href="">
+								<a href="{{ route('blog.single', $post->id) }}">
 									<img class="w-15 h-9" src="{{ asset('storage/' . $post->image_url) }}" alt="" loading="lazy">
 								</a>
 							</figure>

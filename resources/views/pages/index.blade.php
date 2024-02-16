@@ -233,14 +233,17 @@
 				@foreach ($posts as $post)
 					<div class="card">
 						<figure lazy="true">
-							<img src="{{ asset('storage/' . $post->image_url) }}" alt="Post Image" loading="lazy">
+							<a href="{{ route('blog.single', $post->id) }}">
+								<img src="{{ asset('storage/' . $post->image_url) }}" alt="Post Image" loading="lazy">
+							</a>
 						</figure>
 
 						<div class="block p-1">
 
 							<small class="float-right flex text-gray-400"><x-heroicon-o-clock class="h-4 w-4 text-gray-400" />
 								{{ $post->created_at }}</small>
-							<h4 class="text-sm font-semibold text-teal-800">{{ $post->title }}</h4>
+							<h4 class="text-sm font-semibold text-teal-800"><a
+									href="{{ route('blog.single', $post->id) }}">{{ $post->title }}</a></h4>
 							<div class="overflow-hidden text-ellipsis whitespace-nowrap text-sm text-gray-500">{{ $post->content }}</div>
 
 						</div>

@@ -13,7 +13,7 @@
 					@foreach ($posts as $post)
 						<div class="post block">
 							<figure>
-								<a href="">
+								<a href="{{ route('blog.single', $post->id) }}">
 									<img src="{{ asset('storage/' . $post->image_url) }}" alt="">
 								</a>
 							</figure>
@@ -22,7 +22,8 @@
 								<date class="date flex flex-row justify-end text-teal-600"><x-heroicon-o-calendar-days
 										class="h-6 w-4 text-teal-900" />&nbsp;{{ $post->published_at }}</date>
 
-								<p class="text-sm font-semibold uppercase"><a href="">{{ $post->title }}</a></p>
+								<p class="text-sm font-semibold uppercase"><a
+										href="{{ route('blog.single', $post->id) }}">{{ $post->title }}</a></p>
 
 								<div class="post-content mb-2">
 									{!! $post->content !!}

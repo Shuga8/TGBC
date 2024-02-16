@@ -69,7 +69,7 @@ class PagesController extends Controller
 
     public function blog()
     {
-        $posts = Post::paginate(12);
+        $posts = Post::paginate(6);
 
         $data = [
             'title' => 'Blog',
