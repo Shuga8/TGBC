@@ -731,7 +731,7 @@ main {
         height: 400px;
         background: url("../../images/bible-7092020_1280.jpg") no-repeat center
             center / cover;
-        mix-blend-mode: difference;
+        mix-blend-mode: exclusion;
 
         .overlay {
             width: 100%;
@@ -740,6 +740,63 @@ main {
             align-items: center;
             justify-content: center;
             background: rgba($color: #000000, $alpha: 0.4);
+
+            h2 {
+                color: #fff;
+            }
+        }
+    }
+
+    > .content {
+        width: 100%;
+
+        .posts {
+            width: 100%;
+            display: flex !important;
+            justify-content: normal;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+
+            .post {
+                width: clamp(280px, 398px, 600px);
+                height: 380px;
+                justify-self: center;
+                display: block;
+                overflow-y: hidden;
+
+                figure {
+                    width: 100%;
+                    height: 260px;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: fill;
+                        mix-blend-mode: exclusion;
+
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+                .date {
+                    color: #243070;
+                }
+
+                .post-content {
+                    overflow: hidden; /* Ensure text overflow is hidden */
+                    white-space: nowrap; /* Prevent text from wrapping */
+                    text-overflow: ellipsis;
+                    font-size: 12px;
+                }
+
+                .more-btn {
+                    padding: 8px 12px;
+                    color: #fff;
+                    background: #0c1e80;
+                }
+            }
         }
     }
 }
