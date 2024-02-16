@@ -22,5 +22,7 @@ Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
 Route::get('/our-pastors', [PagesController::class, 'pastors'])->name('pastors');
 Route::get('/blog', [PagesController::class, 'blog'])->name('blog');
 Route::get('/blog/{id}', [PagesController::class, 'single'])->name('blog.single');
+Route::get('/events', [PagesController::class, 'events'])->name('events');
+Route::get('/events/{id}', [PagesController::class, 'event'])->name('events.single');
 Route::post('/contact', [PagesController::class, 'send'])->name('send_contact_message');
 Route::post('/subscribe', [SubscribersController::class, 'index'])->name('subscribe');

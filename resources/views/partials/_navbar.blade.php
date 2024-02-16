@@ -24,7 +24,7 @@
 			</div>
 
 			<div class="link">
-				<a href="">Events</a>
+				<a href="{{ route('events') }}">Events</a>
 			</div>
 
 			<div class="link">

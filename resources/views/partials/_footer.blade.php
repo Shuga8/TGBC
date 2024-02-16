@@ -52,8 +52,8 @@
 			<h5>Useful Links</h5>
 
 			<div class="content">
-				<a href="">Events</a>
-				<a href="">Blog</a>
+				<a href="{{ route('events') }}">Events</a>
+				<a href="{{ route('blog') }}">Blog</a>
 				<a href="">Sermons</a>
 
 			</div>

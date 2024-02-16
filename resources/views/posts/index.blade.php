@@ -29,7 +29,7 @@
 									{!! $post->content !!}
 								</div>
 
-								<a class="more-btn" href="">more</a>
+								<a class="more-btn" href="{{ route('blog.single', $post->id) }}">more</a>
 							</div>
 						</div>
 					@endforeach

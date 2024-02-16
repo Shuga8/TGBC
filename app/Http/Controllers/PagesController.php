@@ -95,4 +95,16 @@ class PagesController extends Controller
 
         return view('posts.single')->with($data);
     }
+
+    public function events()
+    {
+        $events = Event::paginate(6);
+
+        $data = [
+            'title' => 'Events',
+            'events' => $events
+        ];
+
+        return view('events.index')->with($data);
+    }
 }
