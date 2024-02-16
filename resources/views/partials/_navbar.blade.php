@@ -28,7 +28,7 @@
 			</div>
 
 			<div class="link">
-				<a href="">Blog</a>
+				<a href="{{ route('blog') }}">Blog</a>
 			</div>
 
 			<div class="link">

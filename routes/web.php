@@ -20,5 +20,6 @@ Route::get('/general-overseer', [PagesController::class, 'general_overseer'])->n
 Route::get('/mummy-go', [PagesController::class, 'mummy_go'])->name('mummy_go');
 Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
 Route::get('/our-pastors', [PagesController::class, 'pastors'])->name('pastors');
+Route::get('/blog', [PagesController::class, 'blog'])->name('blog');
 Route::post('/contact', [PagesController::class, 'send'])->name('send_contact_message');
 Route::post('/subscribe', [SubscribersController::class, 'index'])->name('subscribe');

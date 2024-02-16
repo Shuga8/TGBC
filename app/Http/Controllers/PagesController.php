@@ -66,4 +66,16 @@ class PagesController extends Controller
 
         return view('pages.pastors')->with($data);
     }
+
+    public function blog()
+    {
+        $posts = Post::paginate(12);
+
+        $data = [
+            'title' => 'Blog',
+            'posts' => $posts,
+        ];
+
+        return view('posts.index')->with($data);
+    }
 }
