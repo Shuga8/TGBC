@@ -58,7 +58,7 @@ main {
                     position: relative;
 
                     > a {
-                        padding: 14px 14px;
+                        padding: 18px 14px;
                         color: #ffffff;
                         position: relative; /* Added position relative */
 
@@ -82,7 +82,7 @@ main {
                         position: absolute;
                         top: 40px; /* Adjusted position */
                         left: 0; /* Adjusted position */
-                        background: #aaa;
+                        background: rgba(0, 0, 0, 0.4);
                         width: 150px;
 
                         /* Removed &:hover from here */
@@ -94,7 +94,8 @@ main {
 
                         > a {
                             display: block;
-                            padding: 12px 5px;
+                            padding: 13px 5px;
+                            color: #fff;
                         }
                     }
                 }
@@ -209,11 +210,11 @@ main {
 
     .header.active-header {
         background: rgba($color: #000000, $alpha: 0.95);
-        height: 420px;
+        height: 470px;
     }
 
     .header.active-header.increase {
-        height: 530px;
+        height: 570px;
     }
 
     .slider {

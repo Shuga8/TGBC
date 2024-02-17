@@ -32,6 +32,10 @@
 			</div>
 
 			<div class="link">
+				<a href="">Live TV</a>
+			</div>
+
+			<div class="link">
 				<a href="{{ route('contact') }}">Contact</a>
 			</div>
 

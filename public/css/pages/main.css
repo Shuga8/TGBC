@@ -59,7 +59,7 @@ main {
     position: relative;
   }
   .header .navbar .links > .link:not(:has(a.toggle-icon)) > a {
-    padding: 14px 14px;
+    padding: 18px 14px;
     color: #ffffff;
     position: relative; /* Added position relative */
   }
@@ -79,7 +79,7 @@ main {
     position: absolute;
     top: 40px; /* Adjusted position */
     left: 0; /* Adjusted position */
-    background: #aaa;
+    background: rgba(0, 0, 0, 0.4);
     width: 150px;
     /* Removed &:hover from here */
   }
@@ -90,7 +90,8 @@ main {
   .header .navbar .links > .link:not(:has(a.toggle-icon)) > a:hover ~ .dropdown > a,
   .header .navbar .links > .link:not(:has(a.toggle-icon)) .dropdown:hover > a {
     display: block;
-    padding: 12px 5px;
+    padding: 13px 5px;
+    color: #fff;
   }
   .header .navbar .links > .link:has(a.toggle-icon) {
     display: none;
@@ -180,10 +181,10 @@ main {
   }
   .header.active-header {
     background: rgba(0, 0, 0, 0.95);
-    height: 420px;
+    height: 470px;
   }
   .header.active-header.increase {
-    height: 530px;
+    height: 570px;
   }
   .slider .slides > .slide .content h1 {
     font-size: 1.5rem !important;
