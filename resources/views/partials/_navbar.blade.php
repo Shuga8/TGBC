@@ -20,7 +20,7 @@
 			</div>
 
 			<div class="link">
-				<a href="">Sermons</a>
+				<a href="{{ route('sermons') }}">Sermons</a>
 			</div>
 
 			<div class="link">

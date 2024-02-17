@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\SermonsController;
 use App\Http\Controllers\SubscribersController;
 
 /*
@@ -24,5 +25,6 @@ Route::get('/blog', [PagesController::class, 'blog'])->name('blog');
 Route::get('/blog/{id}', [PagesController::class, 'single'])->name('blog.single');
 Route::get('/events', [PagesController::class, 'events'])->name('events');
 Route::get('/events/{id}', [PagesController::class, 'event'])->name('events.single');
+Route::get('/sermons', [SermonsController::class, 'sermons'])->name('sermons');
 Route::post('/contact', [PagesController::class, 'send'])->name('send_contact_message');
 Route::post('/subscribe', [SubscribersController::class, 'index'])->name('subscribe');

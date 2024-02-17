@@ -54,7 +54,7 @@
 			<div class="content">
 				<a href="{{ route('events') }}">Events</a>
 				<a href="{{ route('blog') }}">Blog</a>
-				<a href="">Sermons</a>
+				<a href="{{ route('sermons') }}">Sermons</a>
 
 			</div>
 		</div>
