@@ -79,8 +79,9 @@ main {
     position: absolute;
     top: 40px; /* Adjusted position */
     left: 0; /* Adjusted position */
-    background: rgba(0, 0, 0, 0.4);
-    width: 150px;
+    background: rgba(0, 0, 0, 0.8);
+    width: 180px;
+    padding: 5px 10px;
     /* Removed &:hover from here */
   }
   .header .navbar .links > .link:not(:has(a.toggle-icon)) > a:hover ~ .dropdown,
